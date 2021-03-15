@@ -11,7 +11,7 @@ export const Landing = () =>{
         return(
             <div className="fixBackgroundParent">
                 <div className="fixBackground"/>         
-                    <OmApp/>
+                    <OmApp/> //Om WebApp
                     <Button variant="outline-primary mr-3" a href="/auth/google">Register today with Google</Button>;  
             </div>
           

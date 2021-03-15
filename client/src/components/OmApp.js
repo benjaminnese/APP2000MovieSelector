@@ -1,5 +1,7 @@
 import React from 'react';
 
+// Om oss, component i Landing.js, skal fortelle litt om oss, skal deretter følge en knapp for registrering med google
+
 const OmApp = () => {
     return(
         <div style={{ textAlign: 'left', width: '50%', color: 'white'}}>
