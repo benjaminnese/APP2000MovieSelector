@@ -16,6 +16,20 @@ class App extends Component{
     componentDidMount() {
         this.props.fetchUser();
       }
+
+        renderContent(){
+        switch(this.props.auth){
+            case null:  //ikke avklart om bruker logget inn eller ikke
+                return null;
+            case false: //ikke logget inn
+                return null;
+            default:  //logget inn
+                return null;
+        }
+    }
+
+
+
     //Sjekk om bruker er innlogget, gir
     //route basert på dette
     render() {

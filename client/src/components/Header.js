@@ -10,10 +10,10 @@ class Header extends Component {
       case null:
         return;
       case false:
-        return <Button variant="outline-primary mr-3" a href="/auth/google">login with google</Button>;
+        return <Button variant="btn btn-info mr-3" a href="/auth/google">login with google</Button>;
       default:
         return [
-          <Button variant="outline-danger mr-3" a href="/api/logout">Logout</Button>
+          <Button variant="btn btn-danger mr-3" a href="/api/logout">Logout</Button>
         ];
     }
   }

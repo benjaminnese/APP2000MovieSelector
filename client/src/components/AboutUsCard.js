@@ -1,14 +1,14 @@
 //Side som bruker kommer til om ikke innlogget
 import React from 'react';
 import {Card} from 'react-bootstrap';
-
+import Logo from './logo.PNG';
 // Lager et kort for å vise frem hver student
 // Skal ta en navn(Mathias Berger) feks, og tekst om personen. Samt et bilde.
 
 export const AboutUsCard = (props) =>{
         return(
-            <div>
-                <Card bg="primary" text="white" style={{ width: '15%', height: '3 0%' }}>
+                <Card bg="primary" text="white" style={{ width: '20%', height: '30%' }}>
+                    <img class="card-img-top" src={Logo} alt="Card image cap"/>
                     <Card.Header>{props.name}</Card.Header>
                     <Card.Body>
                     <Card.Title>{props.studentNummer}</Card.Title>
@@ -17,7 +17,6 @@ export const AboutUsCard = (props) =>{
                     </Card.Text>
                     </Card.Body>
                 </Card>
-            </div>
         );
 }
 
