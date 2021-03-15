@@ -11,7 +11,7 @@ export const Landing = () =>{
         return(
             <div style={{ backgroundImage: `url(${background})`,  backgroundSize: "cover", zIndex: "-10", position : "fixed" }}>
                 <div id="rcorners3">
-                <OmApp/>
+                <OmApp/> // Om Webapp
                 <Button variant="outline-primary mr-3" a href="/auth/google">Register today with Google</Button>;
                 </div>
             </div>
