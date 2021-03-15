@@ -23,14 +23,15 @@ class App extends Component{
                 <BrowserRouter>
                     <div>
                         <Header />
+                        <Route exact path="/" component={Landing} />
                         <Route exact path="/hei" component={MovieCard} />
-                        
+                        <Route exact path ="/about" component={AboutUs} />
                     </div>
                 </BrowserRouter>
-              
+
             </div>
         );
     }
-   
+
 }
 export default connect(null, actions) (App);

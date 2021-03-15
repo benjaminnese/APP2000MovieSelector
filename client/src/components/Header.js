@@ -24,23 +24,24 @@ class Header extends Component {
         <div className="Col">
           <Navbar variant="dark">
           <Navbar.Brand href="/">
-              MovieSelector 
+              MovieSelector
               <img
                 alt="Logo bilde"
                 src={Logo}
                 width="50"
                 height="50"
                 className="ml-2"
-              
+
             />
     </Navbar.Brand>
       <Nav className="mr-auto">
         <Nav.Link href="#home">Home</Nav.Link>
-      
+        <Nav.Link href="/about">About us</Nav.Link>
+
       </Nav>
       <Form inline>
       {this.renderContent()}
-        
+
       </Form>
     </Navbar>
     </div>
@@ -54,4 +55,3 @@ function mapStateToProps({ auth }) {
 }
 
 export default connect(mapStateToProps)(Header);
-
