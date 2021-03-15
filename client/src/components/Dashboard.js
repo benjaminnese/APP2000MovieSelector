@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-// Om oss, component i Landing.js, skal fortelle litt om oss, skal deretter følge en knapp for registrering med google
+// Det bruker skal se når de kommer inn på nettside når de er allerede logget it
 
 const Dashboard = () => {
     return(
