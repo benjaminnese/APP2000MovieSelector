@@ -2,9 +2,10 @@ import './App.css';
 import React, { Component } from 'react';
 import Dashboard from './Dashboard'
 import OmApp from './OmApp'
+import ProfilMenu from './ProfilMenu'
 import {connect} from 'react-redux';
 
-// Skal vise diverse profil muligheter, evt en hub til å kunne forandre preferanser, svartliste filmer, logge ut etc
+// Skal vise diverse instillinger
 
 
 class ProfilContent extends Component {
@@ -17,7 +18,7 @@ class ProfilContent extends Component {
                   <OmApp />);
               default:
                   return(
-                     <Dashboard />
+                    <ProfilMenu />
                    );
           }
       }
