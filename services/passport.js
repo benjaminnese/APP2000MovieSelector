@@ -26,13 +26,13 @@ passport.use(
         proxy: true   //dealt with it google, om ikke proxy:true så får man http, må ha absolutt filepath for https her
     }, 
     async(accessToken, refreshToken, profile, done) => {
-        const existingUser = await User.findOne({  googleId: profile.id })
-        
+    const existingUser = await User.findOne({  googleId: profile.id })
+      
         if(existingUser){
             done(null, existingUser); //null = ingen feil her, vi er ferdig her har vi brukeren vi har funnet
         }    
-        else{   
-            const user = await new User({googleId: profile.id}).save();
+        else{   //Benjamin sitt arbeid!!! tok faen så lang tid å finne riktig kode
+            const user = await new User({googleId: profile.id, name: profile.displayName, bilde: profile.photos[0].value}).save();
             done(null, user);
         }                                            //profile.id kommer fra google profilen
                                                     //.save vil da lagre bruker i databasen, mongoDB
