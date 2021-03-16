@@ -33,13 +33,13 @@ npm run dev
 
 ## Author
 
-👤 **Benjamin Nese**
-
+👤 **Benjamin**
 * Github: [@benjaminnese](https://github.com/benjaminnese)
-
-## Show your support
-
-Give a ⭐️ if this project helped you!
-
+👤 **Johannes**
+* Github: [@6pBit ](https://github.com/6pBit)
+* 👤 **Håkon**
+* Github: [@hakon98](https://github.com/hakon98)
+👤 **Mathias**
+* Github: [@Wavierbear](https://github.com/Wavierbear)
 ***
 _This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
