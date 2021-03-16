@@ -7,7 +7,7 @@
 
 > I faget APP2000 ved USN har vi lagd applikasjonen Movie Selector. Tinder for film, hvor dere felles kan endelig bli enig om den perfekte filmen for kvelden!
 
-### 🏠 [Homepage](Heroku, TBA)
+### 🏠 [Homepage](https://salty-stream-58366.herokuapp.com/)
 
 ## Prerequisites
 
@@ -35,10 +35,13 @@ npm run dev
 
 👤 **Benjamin**
 * Github: [@benjaminnese](https://github.com/benjaminnese)
+* 
 👤 **Johannes**
 * Github: [@6pBit ](https://github.com/6pBit)
+* 
 * 👤 **Håkon**
 * Github: [@hakon98](https://github.com/hakon98)
+* 
 👤 **Mathias**
 * Github: [@Wavierbear](https://github.com/Wavierbear)
 ***
