@@ -40,7 +40,7 @@ passport.use(
     async(accessToken, refreshToken, profile, done) => {
     const existingUser = await User.findOne({  googleId: profile.id })
       
-        if(existingUser){
+        if(false){ //Fix bug som gjør navn ikke kommer opp
             done(null, existingUser); //null = ingen feil her, vi er ferdig her har vi brukeren vi har funnet
         }    
         else{   //Benjamin sitt arbeid!!! tok faen så lang tid å finne riktig kode

@@ -40,10 +40,13 @@ class Header extends Component {
     </Navbar.Brand>
       <Nav className="mr-auto">
         <Nav.Link href="#home">Home</Nav.Link>
-        <Nav.Link href="/about">About us</Nav.Link>
+        <Nav.Link href="/about">About</Nav.Link>
+        
 
       </Nav>
       <Form inline>
+      <h4 className="text-white pr-2">{this.props.auth.name}</h4>
+      <img className = "rounded-circle" src={this.props.auth.bilde}/>
       {this.renderContent()}
       </Form>
     </Navbar>
