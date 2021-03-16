@@ -40,7 +40,7 @@ class App extends Component{ //Lagde den om til class så vi får tilgang til li
                     <div>
                         <Header />
                         <Route exact path="/" component={Landing} />
-                        <Route exact path="/hei" component={MovieCard} />
+                        <Route exact path="/film" component={MovieCard} />
                         <Route exact path ="/about" component={AboutUs} />
                         <Route exact path ="/profil" component={Profil}/>
                     </div>

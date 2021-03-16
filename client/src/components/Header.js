@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import {Button, Navbar,Nav,Form,Dropdown} from 'react-bootstrap';
+import {Button, Navbar,Nav,Form,NavDropdown} from 'react-bootstrap';
 import Logo from './logo.PNG';
 import DropdownButton from 'react-bootstrap/DropdownButton'
+import DropdownToggle from 'react-bootstrap/esm/DropdownToggle';
 
 class Header extends Component {
 
@@ -14,13 +15,25 @@ class Header extends Component {
       case null:
         return;
       case false:
-        return <Button variant="btn btn-info mr-3" a href="/auth/google">Login with google</Button>;
+        return <Button variant="primary" a href="/auth/google">Login with google</Button>;
       default:
-        return [<DropdownButton id="dropdown-basic-button" title="Dropdown button"> 
-                      <Dropdown.Item href="/profil">Profil</Dropdown.Item>
-                    <Dropdown.Item href="/profil/instillinger">Instillinger</Dropdown.Item>
-                    <Dropdown.Item href="/api/logout">Logout</Dropdown.Item>
-              </DropdownButton>
+        return [
+          <Nav style={{float:'right'}} className="navbar m-0 p-0 ">
+             <a className="nav-link dropdown-toggle " href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"  aria-expanded="false">
+               <img src={this.props.auth ? this.props.auth.bilde : "https://cdn.iconscout.com/icon/premium/png-256-thumb/profile-1506810-1278719.png"} 
+               style={{width:"50px", height:"50px" }}
+               className="rounded-circle"
+               />
+            </a>
+             <div className="dropdown-menu">
+               <a className="dropdown-item" href="/profil">Profil</a>
+               <a className="dropdown-item" href="/profil/instillinger">Edit Profile</a>
+               <a className="dropdown-item" href="/api/logout">Log Out</a>
+             </div>
+        
+
+     </Nav>
+        
         ];
     }
   }
@@ -44,12 +57,12 @@ class Header extends Component {
       <Nav className="mr-auto">
         <Nav.Link href="#home">Home</Nav.Link>
         <Nav.Link href="/about">About</Nav.Link>
+        <Nav.Link href="/film">Film</Nav.Link>
         
 
       </Nav>
       <Form inline>
-      <h4 className="text-white pr-2">{this.props.auth ? this.props.auth.name : ""}</h4>
-      <img className = "rounded-circle" style={{width:'50px'}} src={this.props.auth ? this.props.auth.bilde : "https://cdn.iconscout.com/icon/premium/png-256-thumb/profile-1506810-1278719.png"}/>
+      <h5 className="text-white pr-2">{this.props.auth ? this.props.auth.name : ""}</h5>
       {this.renderContent()}
       </Form>
     </Navbar>
