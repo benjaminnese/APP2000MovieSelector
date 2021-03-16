@@ -39,7 +39,7 @@ Root prosjekt mappe
 ├── Client                 # Frontend, React delen
    ├── public              # Root html, statisk filer(bilder, css) 
    ├── src                 # Her ligger meste av vår kode
-       ├                   # Actions, Reducers er Redux konsepter ### [Redux](https://redux.js.org/)
+       ├                   # Actions, Reducers er Redux konsepter  ### [Redux](https://redux.js.org/)
        ├─actions           # Actions kan sees på som events som beskriver noe  
        ├                   # som vil skje i applikasjonen
        ├─reducers          # Håntering av state og actions. Kan sees på som en event lytter
@@ -76,13 +76,13 @@ Root prosjekt mappe
 
 👤 **Benjamin**
 * Github: [@benjaminnese](https://github.com/benjaminnese)
-* 
+ 
 👤 **Johannes**
 * Github: [@6pBit ](https://github.com/6pBit)
-* 
+ 
 * 👤 **Håkon**
 * Github: [@hakon98](https://github.com/hakon98)
-* 
+ 
 👤 **Mathias**
 * Github: [@Wavierbear](https://github.com/Wavierbear)
 ***
