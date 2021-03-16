@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import {Button, Navbar,Nav,Form} from 'react-bootstrap';
+import {Button, Navbar,Nav,Form,Dropdown} from 'react-bootstrap';
 import Logo from './logo.PNG';
+import DropdownButton from 'react-bootstrap/DropdownButton'
 
 class Header extends Component {
   renderContent() {
@@ -12,8 +13,11 @@ class Header extends Component {
       case false:
         return <Button variant="btn btn-info mr-3" a href="/auth/google">Login with google</Button>;
       default:
-        return [
-          <Button variant="btn btn-danger mr-3" a href="/api/logout">Logout</Button>
+        return [<DropdownButton id="dropdown-basic-button" title="Dropdown button"> 
+                      <Dropdown.Item href="/profil">Profil</Dropdown.Item>
+                    <Dropdown.Item href="/profil/instillinger">Instillinger</Dropdown.Item>
+                    <Dropdown.Item href="/api/logout">Logout</Dropdown.Item>
+              </DropdownButton>
         ];
     }
   }
@@ -41,7 +45,6 @@ class Header extends Component {
       </Nav>
       <Form inline>
       {this.renderContent()}
-
       </Form>
     </Navbar>
     </div>

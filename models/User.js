@@ -9,7 +9,7 @@ const {Schema} = mongoose;
 
 const userSchema = new Schema({
     googleId: String,
-    name: String
+    name: String //lage vennerelasjon her, en array med users inni users
 });
 
 mongoose.model('users', userSchema);

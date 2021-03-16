@@ -18,6 +18,7 @@ const keys = require('../config/keys'); // henter nøkler via keys filen.
 const User = mongoose.model('users'); // binder User til users modellen, og ber mongoose registrere en ny modell,
                                     // om denne ikke allerede eksisterer
 
+// serializeUser og deserialzieUser er obligatorisk
 passport.serializeUser((user, done) => { // brukerens id blir lagret i session, og håndtert ved hjelp av en cookie.
     done(null, user.id);     //ikke samme som profile.id, user.id generert primærnøkkel fra mongo
 });
