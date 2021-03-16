@@ -11,6 +11,7 @@ import backgroundImg from './bg-backgrunn.jpg';
 import MovieCard from './MovieCard';
 import Landing from './Landing';
 import AboutUs from './AboutUs';
+import Profil from './Profil'
 
 class App extends Component{
     componentDidMount() {
@@ -41,6 +42,7 @@ class App extends Component{
                         <Route exact path="/" component={Landing} />
                         <Route exact path="/hei" component={MovieCard} />
                         <Route exact path ="/about" component={AboutUs} />
+                        <Route exact path ="/profil" component={Profil}/>
                     </div>
                 </BrowserRouter>
 
