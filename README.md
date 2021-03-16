@@ -17,7 +17,12 @@
 ## Install
 
 ```sh
-1. I terminal, &#34;cd ./&#34; til root mappen 2. npm install 3. &#34;cd client&#34; 4. npm install 5. &#34;cd ..&#34; 6. I config mappen, opprett filen dev.js og legg inn relevant nøkler
+1. I terminalen,cd './' til root mappen 
+2. 'npm install' 
+3.'cd client'
+4. 'npm install'
+5. 'cd ..'
+6. I config mappen, opprett filen dev.js og legg inn relevant nøkler
 ```
 
 ## Usage
