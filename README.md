@@ -14,10 +14,11 @@
 - node 15.7.0
 - npm 7.6.2
 
-## Install
+## Install 
 
 ```sh
-1. I terminalen,cd './' til root mappen 
+I terminalen
+1. 'cd ./' til root mappen 
 2. 'npm install' 
 3. 'cd client'
 4. 'npm install'
