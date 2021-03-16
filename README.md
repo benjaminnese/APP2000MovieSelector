@@ -30,6 +30,43 @@
 ```sh
 npm run dev
 ```
+## FilStructure
+Root prosjekt mappe
+├── Client                 # Frontend, React delen
+   ├── public              # Root html, statisk filer(bilder, css) 
+   ├── src                 # Her ligger meste av vår kode
+       ├                   # Actions, Reducers er Redux konsepter ### [Redux](https://redux.js.org/)
+       ├─actions           # Actions kan sees på som events som beskriver noe  
+       ├                   # som vil skje i applikasjonen
+       ├─reducers          # Håntering av state og actions. Kan sees på som en event lytter
+                           # som håntere dataen basert på handlingen
+       ├─components        # Components inneholder klasse og funksjones komponenter
+          ├─App.js         # App.js kan vi se på som inngansporten til de andre kompontene i components
+          ├─.   
+          ├─.. 
+       ├─index.css         # 
+       ├─index.js          # "Import, export portal", kommunikasjonen med public/index.html
+       ├─setupProxy.js     # TODO forklar denne Håkon
+       
+   ├── .gitignore          #  
+   ├── package-lock.json   #
+   ├── package.json        #
+   └── README.md           #
+   
+├── Config                 # Verdifiserings url'er og nøkler for utvikling og heroku
+├── Middlewares            # Operasjoner som skjer på tidspunktet mellom spørring og henting. 
+├── Models                 # Modeler for databasen, strukturert med Mongoose
+├── Public                
+├── Routes                 # Ruting ved authenfisering via Passport
+├── Services               # Konfigurering av Passport mot google autenfisering    
+├
+├── .gitignore             # Filer som ikke skal lastet opp til GitHub, pga plass eller nøkler
+├── package-lock.json      # Låste moduler, så applikasjon skal kjøre likes mulig på tvers av datamaskiner
+├── package.json           # Generell tredjeparts avhengiheter, kommandoen 'npm install' sjekker 
+├                          # her for hva som skal installeres.                          
+└── README.md              # Denne filen her
+
+
 
 ## Author
 
