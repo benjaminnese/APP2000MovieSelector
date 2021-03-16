@@ -30,7 +30,11 @@
 ```sh
 npm run dev
 ```
+
+
 ## FilStructure
+
+```bash
 Root prosjekt mappe
 ├── Client                 # Frontend, React delen
    ├── public              # Root html, statisk filer(bilder, css) 
@@ -65,7 +69,7 @@ Root prosjekt mappe
 ├── package.json           # Generell tredjeparts avhengiheter, kommandoen 'npm install' sjekker 
 ├                          # her for hva som skal installeres.                          
 └── README.md              # Denne filen her
-
+```
 
 
 ## Author
