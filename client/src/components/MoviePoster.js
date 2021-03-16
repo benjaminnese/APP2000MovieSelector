@@ -36,9 +36,7 @@ const MoviePoster =(props)=> {
                 <LikeMovie className = "mb-5" onClickLiker={props.onClickLiker} onClickMisliker={props.onClickMisliker} />
                 </div>
             </Card.ImgOverlay>
-           
         </Card>
-    
         </div>
     )
 }
