@@ -1,41 +1,52 @@
-const passport = require('passport');
-const GoogleStrategy = require('passport-google-oauth20').Strategy;
-const mongoose = require('mongoose');
-const keys = require('../config/keys'); //nøkkelen er lagret i keys.js,
+/* Håndterer verifisering av brukere ved innlogging ved hjelp av passport.
+* Her autentifiseres bruker via google, så derfor brukes GoogleStrategy.
+* En strategy i passport forteller passport hvordan den skal håndtere autentifisering.
+*
+* Filen inneholder async og await syntaks. Disse er for å håndtere asynkrone funksjoner.
+* En funksjon som er asynkron, markeres med async. En asynkron funksjon sender alltid tilbake et løfte (promise).
+* Await brukes kun inne i asynkrone funksjoner. Await gjør at JavaScript venter til løftet blir oppfylt,
+* og returnerer deretter resultatet.
+*/
+
+const passport = require('passport'); // henter inn passport
+const GoogleStrategy = require('passport-google-oauth20').Strategy; // henter inn Strategy for bruk med passport
+const mongoose = require('mongoose'); // henter inn mongoose
+const keys = require('../config/keys'); // henter nøkler via keys filen.
 
                                        //en fil som ikke blir pushet til git
 
-const User = mongoose.model('users');
+const User = mongoose.model('users'); // binder User til users modellen, og ber mongoose registrere en ny modell,
+                                    // om denne ikke allerede eksisterer
 
-passport.serializeUser((user, done) => {
-    done(null, user.id);     //ikke samme som profile.id, user.id generet primærnøkkel fra mongo
+passport.serializeUser((user, done) => { // brukerens id blir lagret i session, og håndtert ved hjelp av en cookie.
+    done(null, user.id);     //ikke samme som profile.id, user.id generert primærnøkkel fra mongo
 });
 
-passport.deserializeUser((id, done)=> {  //gjør id tilbake til bruker, retunere bruker
-    User.findById(id).then(user => {
+passport.deserializeUser((id, done)=> {  // henter id'en lagret i session
+    User.findById(id).then(user => { // henter bruker med gitt id, og returnerer bruker.
         done(null,user);
     });
 });
 
+// Ber passport benytte seg av den nye strategien
 passport.use(
     new GoogleStrategy({
-        clientID: keys.googleClientID, //nøkkel fra keys.js lagret i keys.ID.. og keys.Secret..
-        clientSecret: keys.googleClientSecret,
-        callbackURL: '/auth/google/callback', //ruten som bruker blir sendt til når de får verdifisert innlogg
-        proxy: true   //dealt with it google, om ikke proxy:true så får man http, må ha absolutt filepath for https her
+        clientID: keys.googleClientID, // nøkkel tilsendt via keys filen.
+        clientSecret: keys.googleClientSecret, // nøkkel tilsendt via keys filen.
+        callbackURL: '/auth/google/callback', // ruten som bruker blir sendt til når de får verifisert innlogging
+        proxy: true   // om ikke proxy:true, så får man http istedenfor https i ruten man bruker. Google godtar ikke dette.
     }, 
     async(accessToken, refreshToken, profile, done) => {
-        const existingUser = await User.findOne({  googleId: profile.id })
-        
-        if(existingUser){
-            done(null, existingUser); //null = ingen feil her, vi er ferdig her har vi brukeren vi har funnet
-        }    
+        const existingUser = await User.findOne({  googleId: profile.id }) // prøver å hente ut en bruker fra users modellen
+                                                                        // som har samme profile.id. Binder resultatet til existingUser
+        // hvis brukeren eksisterer i databasen
+        if(existingUser){ 
+            done(null, existingUser); //null = ingen feil her, vi er ferdig. Her har vi brukeren vi har funnet
+        }
+        // hvis brukeren ikke eksisterer i databasen    
         else{   
-            const user = await new User({googleId: profile.id}).save();
-            done(null, user);
-        }                                            //profile.id kommer fra google profilen
-                                                    //.save vil da lagre bruker i databasen, mongoDB
-            
-             
+            const user = await new User({googleId: profile.id}).save(); //profile.id kommer fra google profilen
+            done(null, user);                                            //.save() vil da lagre bruker i databasen, mongoDB
+        }                                             
     })       
 );
