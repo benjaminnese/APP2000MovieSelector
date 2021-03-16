@@ -19,7 +19,7 @@
 ```sh
 1. I terminalen,cd './' til root mappen 
 2. 'npm install' 
-3.'cd client'
+3. 'cd client'
 4. 'npm install'
 5. 'cd ..'
 6. I config mappen, opprett filen dev.js og legg inn relevant nøkler
