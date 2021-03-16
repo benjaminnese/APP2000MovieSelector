@@ -2,9 +2,8 @@
 import './App.css';
 import React, {Component} from 'react';
 import {BrowserRouter, Route} from 'react-router-dom';
-import { connect } from 'react-redux'; //kompalitet mellom react og redux biblioteket
-import * as actions from '../actions'; //* hent alle action creators vi har lagd
-
+import { connect } from 'react-redux';
+import * as actions from '../actions';
 import Header from './Header';
 //SJEKK AT TING FUNGERE FØR DERE COMMITER TIL GITHUB
 import DashBoard from './Dashboard';
@@ -14,10 +13,10 @@ import Landing from './Landing';
 import AboutUs from './AboutUs';
 import Profil from './Profil'
 
-class App extends Component{ //Lagde den om til class så vi får tilgang til livssyklusen 86.Refactor APP udeamy.com
+class App extends Component{
     componentDidMount() {
-        this.props.fetchUser(); //props lages fra connect under
-      }                         //fetchUser er hentet fra /actions
+        this.props.fetchUser();
+      }
 
         renderContent(){
         switch(this.props.auth){
@@ -52,5 +51,4 @@ class App extends Component{ //Lagde den om til class så vi får tilgang til li
     }
 
 }
-//mapStateToProp sett vi null, også alle actions creatorsene. 
-export default connect(null, actions) (App); //Alle actions er nå props i App
+export default connect(null, actions) (App);
