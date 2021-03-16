@@ -7,6 +7,7 @@ const keys = require('../config/keys'); //nøkkelen er lagret i keys.js,
 
 const User = mongoose.model('users');
 
+//obligatorisk å ha serializeUser og deserializeUser 
 passport.serializeUser((user, done) => {
     done(null, user.id);     //ikke samme som profile.id, user.id generet primærnøkkel fra mongo
 });

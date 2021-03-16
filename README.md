@@ -1,20 +1,40 @@
-For å installere og kjøre koden. 
-Ikke push før komplierer
+<h1 align="center">Welcome to movieselector 👋</h1>
+<p>
+  <img alt="Version" src="https://img.shields.io/badge/version-0.1.0-blue.svg?cacheSeconds=2592000" />
+  <img src="https://img.shields.io/badge/node-15.7.0-blue.svg" />
+  <img src="https://img.shields.io/badge/npm-7.6.2-blue.svg" />
+</p>
 
-1. I terminal CD til root mappen
-2. npm install
-3. "CD client"
-4. npm install
-5. "CD .."
-6. "npm run dev"
-7. I config mappen, opprett filen dev.js
+> I faget APP2000 ved USN har vi lagd applikasjonen Movie Selector. Tinder for film, hvor dere felles kan endelig bli enig om den perfekte filmen for kvelden!
 
-8 Skriv inn med egen nøkkel
-```javascript
- module.exports = {
-    googleClientID: '495370301328-enj7n41j4lkmpdutu1ee8o1bielsse81.apps.googleusercontent.com',
-    googleClientSecret: '--Fjernet--',
-    mongoURI: 'mongodb+srv://benjamin:--Fjernet--@moviedbdev.tsztr.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
-    cookieKey: 'regregegrerge',
-    redirectDomain: 'http://localhost:3000'
- }
+### 🏠 [Homepage](Heroku, TBA)
+
+## Prerequisites
+
+- node 15.7.0
+- npm 7.6.2
+
+## Install
+
+```sh
+1. I terminal, &#34;cd ./&#34; til root mappen 2. npm install 3. &#34;cd client&#34; 4. npm install 5. &#34;cd ..&#34; 6. I config mappen, opprett filen dev.js og legg inn relevant nøkler
+```
+
+## Usage
+
+```sh
+npm run dev
+```
+
+## Author
+
+👤 **Benjamin Nese**
+
+* Github: [@benjaminnese](https://github.com/benjaminnese)
+
+## Show your support
+
+Give a ⭐️ if this project helped you!
+
+***
+_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_

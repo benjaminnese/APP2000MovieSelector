@@ -5,8 +5,11 @@ import React from 'react';
 
 const Dashboard = () => {
     return(
-      <div>
-      <h1>Hei</h1>
+      <div className = "position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+        <div className="col-md-5 p-lg-5 mx-auto my-5">
+          <h1>Hei</h1>
+        </div>
+     
       </div>
     );
 };
