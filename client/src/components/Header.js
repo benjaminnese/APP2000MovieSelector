@@ -6,6 +6,9 @@ import Logo from './logo.PNG';
 import DropdownButton from 'react-bootstrap/DropdownButton'
 
 class Header extends Component {
+
+
+
   renderContent() {
     switch (this.props.auth) {
       case null:
@@ -45,8 +48,8 @@ class Header extends Component {
 
       </Nav>
       <Form inline>
-      <h4 className="text-white pr-2">{this.props.auth.name}</h4>
-      <img className = "rounded-circle" src={this.props.auth.bilde}/>
+      <h4 className="text-white pr-2">{this.props.auth ? this.props.auth.name : ""}</h4>
+      <img className = "rounded-circle" style={{width:'50px'}} src={this.props.auth ? this.props.auth.bilde : "https://cdn.iconscout.com/icon/premium/png-256-thumb/profile-1506810-1278719.png"}/>
       {this.renderContent()}
       </Form>
     </Navbar>

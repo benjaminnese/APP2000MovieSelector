@@ -44,7 +44,7 @@ passport.use(
             done(null, existingUser); //null = ingen feil her, vi er ferdig her har vi brukeren vi har funnet
         }    
         else{   //Benjamin sitt arbeid!!! tok faen så lang tid å finne riktig kode
-            const user = await new User({googleId: profile.id, name: profile.displayName, bilde: profile.photos[0].value}).save();
+            const user = await new User({googleId: profile.id || '', name: profile.displayName || '', bilde: profile.photos[0].value || ''}).save();
             done(null, user);
         }                                            //profile.id kommer fra google profilen
                                                     //.save vil da lagre bruker i databasen, mongoDB
