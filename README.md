@@ -44,7 +44,7 @@ Root prosjekt mappe
        ├─actions           # Actions kan sees på som events som beskriver noe  
        ├                   # som vil skje i applikasjonen
        ├─reducers          # Håntering av state og actions. Kan sees på som en event lytter
-                           # som håntere dataen basert på handlingen
+       ├                   # som håntere dataen basert på handlingen
        ├─components        # Components inneholder klasse og funksjones komponenter
           ├─App.js         # App.js kan vi se på som inngansporten til de andre kompontene i components
           ├─.   
