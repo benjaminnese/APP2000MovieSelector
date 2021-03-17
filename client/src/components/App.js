@@ -5,9 +5,7 @@ import {BrowserRouter, Route} from 'react-router-dom';
 import { connect } from 'react-redux'; //kompalitet mellom react og redux biblioteket
 import * as actions from '../actions'; //* hent alle action creators vi har lagd
 import Header from './Header';
-//SJEKK AT TING FUNGERE FØR DERE COMMITER TIL GITHUB
-import DashBoard from './Dashboard';
-import backgroundImg from './bg-backgrunn.jpg';
+
 import MovieCard from './MovieCard';
 import Landing from './Landing';
 import AboutUs from './AboutUs';
