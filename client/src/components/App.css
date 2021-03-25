@@ -1,3 +1,9 @@
+html, body { /*fikser horizontal scroll, TODO finn årsak*/
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+
 /*fix for bakgrunn gjennomsiktig*/
 .bg-backgrunnsFarge {
   background-color: rgb(9, 28, 37, green, blue);

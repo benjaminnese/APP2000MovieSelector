@@ -21,8 +21,7 @@ class Profil extends Component {
 
   render() {
     return (
-      <div className="fixBackgroundParent">
-        <div className="fixBackground" />
+      <div >
         {this.renderContent()}
       </div>
     );

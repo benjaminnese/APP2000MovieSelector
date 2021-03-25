@@ -1,10 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
-import { Button, Navbar, Nav, Form, NavDropdown } from "react-bootstrap";
+import { Button, Navbar, Nav, Form} from "react-bootstrap";
 import Logo from "./logo.PNG";
-import DropdownButton from "react-bootstrap/DropdownButton";
-import DropdownToggle from "react-bootstrap/esm/DropdownToggle";
+
 
 class Header extends Component {
   renderContent() {
@@ -19,9 +17,9 @@ class Header extends Component {
         );
       default:
         return [
-          <Nav style={{ float: "right" }} className="navbar m-0 p-0 ">
+          <Nav style={{ float: "right" }} className="navbar m-0 p-0 pr-5">
             <a
-              className="nav-link dropdown-toggle "
+              className="nav-link"
               href="#"
               id="navbarDropdownMenuLink"
               role="button"
@@ -42,10 +40,7 @@ class Header extends Component {
               <a className="dropdown-item" href="/profil">
                 Profil
               </a>
-              <a className="dropdown-item" href="/profil/instillinger">
-                Edit Profile
-              </a>
-              <a className="dropdown-item" href="/api/logout">
+              <a  style={{ backgroundColor: "rgba(105, 105, 105,0.2)" }} className="dropdown-item" href="/api/logout">
                 Log Out
               </a>
             </div>

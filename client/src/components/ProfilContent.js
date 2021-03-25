@@ -15,14 +15,13 @@ class ProfilContent extends Component {
       case false:
         return <OmApp />;
       default:
-        return <ProfilMenu userName = {this.props.auth.name} userPic = {this.props.auth.bilde} />;
+        return <ProfilMenu userName = {this.props.auth.name} userEmail = {this.props.auth.epost} userPic = {this.props.auth.bilde} />;
     }
   }
 
   render() {
     return (
       <div className="fixBackgroundParent">
-        <div className="fixBackground" />
         {this.renderContent()}
       </div>
     );
