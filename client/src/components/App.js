@@ -18,6 +18,7 @@ class App extends Component {
     this.props.fetchUser(); //fetchUser er hentet fra /actions
   }
 
+  
   renderContent() {
     switch (this.props.auth) {
       case null: //ikke avklart om bruker logget inn eller ikke
@@ -32,6 +33,7 @@ class App extends Component {
 
   //Sjekk om bruker er innlogget, gir
   //route basert på dette
+  //render kjører alltid før componentDidMount osv
   render() {
     return (
       <div className="container-fluid bg-backgrunnsFarge">

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import MoviePoster from "./MoviePoster";
 import { Button } from "react-bootstrap";
+import MoviePref from "./MoviePref";
 
 //Et film objekt vises på skjermen
 const MovieCard = () => {
@@ -45,8 +46,9 @@ const MovieCard = () => {
   };
 
   return (
-    <div className="d-flex justify-content-center">
-      <div className="Col">
+    <div>
+      <MoviePref/>
+      <div className="d-flex justify-content-center">
         <MoviePoster
           image={moviePoster}
           name={movieTitle}
