@@ -2,6 +2,8 @@ import { Tabs, Tab, TabPane, TabContent, Nav, Col, Row } from "react-bootstrap";
 import React from "react";
 import MenuProfilSettings from "./MenuProfilSettings";
 import ProfilData from "./ProfilData";
+import Om from './Om';
+import MoviePref from "./MoviePref";
 import { connect } from "react-redux";
 import "./profil.css";
 // Foreløpig fungerer denne mer som en placheholder for videre utvikling
@@ -24,7 +26,7 @@ const ProfilMenu = (props) => {
               <Nav.Link eventKey="utseende">Utseende</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link eventKey="konto">Konto</Nav.Link>
+              <Nav.Link eventKey="filmpref">Film Preferanse</Nav.Link>
             </Nav.Item>
             <Nav.Item>
               <Nav.Link eventKey="om">Om</Nav.Link>
@@ -38,8 +40,12 @@ const ProfilMenu = (props) => {
             </Tab.Pane>
             <Tab.Pane eventKey="sprak">Språk</Tab.Pane>
             <Tab.Pane eventKey="utseende">Darkmode</Tab.Pane>
-            <Tab.Pane eventKey="konto">Konto</Tab.Pane>
-            <Tab.Pane eventKey="om">Om</Tab.Pane>
+            <Tab.Pane eventKey="filmpref">
+              <MoviePref/>
+            </Tab.Pane>
+            <Tab.Pane eventKey="om">
+              <Om/>
+            </Tab.Pane>
           </Tab.Content>
         </Col>
       </Tab.Container>
