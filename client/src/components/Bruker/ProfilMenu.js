@@ -1,9 +1,9 @@
-import { Tabs, Tab, TabPane, TabContent, Nav, Col, Row } from "react-bootstrap";
+import {  Tab,  Nav, Col, Row } from "react-bootstrap";
 import React from "react";
-import MenuProfilSettings from "./MenuProfilSettings";
+
 import ProfilData from "./ProfilData";
-import Om from './Om';
-import MoviePref from "./MoviePref";
+import Om from '../General/Om';
+import MoviePref from "../Film/MoviePref";
 import { connect } from "react-redux";
 import "./profil.css";
 // Foreløpig fungerer denne mer som en placheholder for videre utvikling

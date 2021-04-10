@@ -19,8 +19,8 @@ class Header extends Component {
         return [
           <Nav style={{ float: "right" }} className="navbar m-0 p-0 pr-5">
             <a
+                href="#dropdown-menu" //TODO FIX
               className="nav-link"
-              href="#"
               id="navbarDropdownMenuLink"
               role="button"
               data-toggle="dropdown"
@@ -34,9 +34,10 @@ class Header extends Component {
                 }
                 style={{ width: "50px", height: "50px" }}
                 className="rounded-circle"
+                alt="logo bilde"
               />
             </a>
-            <div className="dropdown-menu">
+            <div id="dropdown-menu">
               <a className="dropdown-item" href="/profil">
                 Profil
               </a>
@@ -65,7 +66,6 @@ class Header extends Component {
               />
             </Navbar.Brand>
             <Nav className="mr-auto">
-              <Nav.Link href="#home">Home</Nav.Link>
               <Nav.Link href="/about">About</Nav.Link>
               <Nav.Link href="/film">Film</Nav.Link>
             </Nav>

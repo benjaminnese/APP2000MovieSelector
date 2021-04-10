@@ -1,5 +1,5 @@
 import axios from "axios";
-import { FETCH_USER } from "./types";
+import { FETCH_USER, LIKE_MOVIE, DISLIKE_MOVIE } from "./types";
 
 //Action er en beskrivelse av som kan bli utført
 
@@ -10,3 +10,17 @@ export const fetchUser = () => async (dispatch) => {
   const res = await axios.get("/api/current_user");
   dispatch({ type: FETCH_USER, payload: res.data }); //Vi henter ut bare data delen av objektet som er retunert av axios, google brukerid osv
 };
+
+export const likeMovie = (movieId) =>{
+  return{
+    type: LIKE_MOVIE,
+    payload: movieId
+  }
+};
+export const dislikeMovie = (movieId) =>{
+  return{
+    type: DISLIKE_MOVIE,
+    payload: movieId
+  }
+}
+

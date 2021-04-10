@@ -21,6 +21,7 @@
     "passport": "^0.4.1",
     "passport-google-oauth20": "^2.0.0",
     "react": "^17.0.1",
+    "react-scripts": "^4.0.3",
     "redux-thunk": "^2.3.0"
   },
   "scripts": {
@@ -53,5 +54,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint": "^7.23.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-react": "^7.23.1",
+    "eslint-plugin-react-hooks": "^4.2.0"
   }
 }

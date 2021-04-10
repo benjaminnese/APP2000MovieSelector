@@ -1,6 +1,4 @@
 import React from "react";
-import Logo from "./logo.PNG";
-import Button from '@material-ui/core/Button';
 
 // Skal vise profil instillinger, feks brukernavn, konaktemail
 // Eneste som har blitt gjort er å fått tak i brukerdata, skal researche mer om funksjon så bruker må sette
@@ -12,7 +10,7 @@ export const MenuProfilSettings = ({userName, userPic}) => {
     <div>
       <h1>{userName} <img src ={userPic} style={{ width: '50px', height: '50px'}}
       className="rounded-circle"/></h1>
-      <h6><a class="waves-effect waves-teal btn-flat">Bytt navn</a> <a class="waves-effect waves-teal btn-flat">Bytt bilde</a></h6>
+      <h6><a className="waves-effect waves-teal btn-flat">Bytt navn</a> <a className="waves-effect waves-teal btn-flat">Bytt bilde</a></h6>
     </div>
   );
 };

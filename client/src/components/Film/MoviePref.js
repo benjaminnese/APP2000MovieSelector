@@ -24,8 +24,7 @@ const MoviePref = () =>{
             <Typography id={props.id}>
                 <b>{props.title}:</b>
             </Typography>   
-            <Slider 
-            
+            <Slider
                 style={{width:300}}
                 valueLabelDisplay="auto"
                 aria-labelledby="year"
@@ -72,25 +71,25 @@ const MoviePref = () =>{
             <b>Year:</b> {year[0]}-{year[1]}
         </Typography>   
        <Slider 
-        style={{width:300}}
-        valueLabelDisplay="auto"
-        aria-labelledby="range-year"
-        value={year}
-        min={1985}
-        max={2021}
-        onChange={(e, value)=>setYear(value)}
+            style={{width:300}}
+            valueLabelDisplay="auto"
+            aria-labelledby="range-year"
+            value={year}
+            min={1985}
+            max={2021}
+            onChange={(e, value)=>setYear(value)}
        />
        <Typography id="range-rating">
             <b>Rating:</b> {rating[0]}-{rating[1]}
         </Typography>   
        <Slider 
-        style={{width:300}}
-        valueLabelDisplay="auto"
-        aria-labelledby="range-rating"
-        value={rating}
-        min={0}
-        max={10}
-        onChange={(e, value)=>setRating(value)}
+            style={{width:300}}
+            valueLabelDisplay="auto"
+            aria-labelledby="range-rating"
+            value={rating}
+            min={0}
+            max={10}
+            onChange={(e, value)=>setRating(value)}
        />
        
       </Form>
