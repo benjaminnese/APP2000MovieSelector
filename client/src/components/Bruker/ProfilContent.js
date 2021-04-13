@@ -1,6 +1,6 @@
 import "../App.css";
 import React, { Component } from "react";
-import OmApp from "../General/OmApp";
+import OmApp from "../OmApp";
 import ProfilMenu from "./ProfilMenu";
 import { connect } from "react-redux";
 

@@ -2,7 +2,7 @@ import {  Tab,  Nav, Col, Row } from "react-bootstrap";
 import React from "react";
 
 import ProfilData from "./ProfilData";
-import Om from '../General/Om';
+import Om from '../Om';
 import MoviePref from "../Film/MoviePref";
 import { connect } from "react-redux";
 import "./profil.css";
