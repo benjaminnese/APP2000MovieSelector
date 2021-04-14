@@ -14,7 +14,7 @@ class ProfilContent extends Component {
       case false:
         return <OmApp />;
       default:
-        return <ProfilMenu userName = {this.props.auth.name} userEmail = {this.props.auth.epost} userPic = {this.props.auth.bilde} />;
+        return <ProfilMenu hei={this.props.auth.hei} userName = {this.props.auth.name} userEmail = {this.props.auth.epost} userPic = {this.props.auth.bilde} />;
     }
   }
 
