@@ -4,15 +4,21 @@
 * og får oppsettet definert i userSchema.
 */
 
+
 const mongoose = require('mongoose');
 const {Schema} = mongoose;
+const moviePrefSchema = require('./MoviePref');
+
+console.log(moviePrefSchema);
 
 const userSchema = new Schema({
-    googleId: String,
-    name: String, //lage vennerelasjon her, en array med users inni users
-    bilde: String,
-    epost: String,
-    hei: String
+  googleId: {type: String, require: true},
+  name: String, // lage vennerelasjon her, en array med users inni users
+  bilde: String,
+  epost: String,
+  hei: String,
+  pref: {type: Schema.Types.ObjectId, ref: 'moviePrefSchema'}, // henter film preferansen
 });
 
-mongoose.model('users', userSchema);
+const users = mongoose.model('users', userSchema);
+module.exports = users;

@@ -1,5 +1,5 @@
 //Side som bruker kommer til om ikke innlogget
-import OmApp from "./../OmApp";
+import OmApp from "./../General/OmApp";
 import Dashboard from "./../Dashboard";
 import { connect } from "react-redux";
 import "../App.css";

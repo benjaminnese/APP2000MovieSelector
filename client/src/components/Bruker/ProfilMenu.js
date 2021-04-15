@@ -59,7 +59,7 @@ function mapStateToProps(state) {
 export default connect(mapStateToProps)(ProfilMenu);
 
 //Orginal kode mathias
-{
+
   /* <div className="d-flex justify-content-left" style ={{backgroundColor: 'white', width: '50%', height: '50%', opacity: '0.8'}}>
     <Container>
       <Tab.Container id="left-tabs-example" defaultActiveKey="first">
@@ -86,4 +86,4 @@ export default connect(mapStateToProps)(ProfilMenu);
       </Tab.Container>
       </Container>
   </div> */
-}
+

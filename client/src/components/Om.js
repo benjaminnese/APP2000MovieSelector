@@ -1,7 +1,4 @@
-import react from 'react';
-
-
-export default () =>{
+export default  () =>{
     return(
     <div>
          <h1>Personvernerklæring</h1>
@@ -65,8 +62,6 @@ Vi bruker personopplysninger for å forhindre misbruk av tjenestene våre. Misbr
 
 5. Deling av opplysninger
 Vi deler i noen tilfeller personopplysninger med andre selskaper som utfører tjenester på våre vegne. Dette er først og fremst for å gi deg en tryggere og bedre handleopplevelse. Her er de viktigste eksemplene:
-	
-
 
     </div>
 )};
