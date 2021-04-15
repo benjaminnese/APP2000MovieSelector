@@ -1,7 +1,6 @@
-import "./App.css";
+import "../App.css";
 import React, { Component } from "react";
-import Dashboard from "./Dashboard";
-import OmApp from "./OmApp";
+import OmApp from "../OmApp";
 import ProfilMenu from "./ProfilMenu";
 import { connect } from "react-redux";
 

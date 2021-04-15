@@ -1,10 +1,8 @@
 //Side som bruker kommer til om ikke innlogget
-import background from "./bg-backgrunn.jpg";
-import OmApp from "./OmApp";
-import Dashboard from "./Dashboard";
+import OmApp from "./../OmApp";
+import Dashboard from "./../Dashboard";
 import { connect } from "react-redux";
-import { Button } from "react-bootstrap";
-import "./App.css";
+import "../App.css";
 import React, { Component } from "react";
 // Se lucid chart for skjetch for landigpage
 

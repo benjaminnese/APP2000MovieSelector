@@ -4,12 +4,12 @@ import React, { Component } from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 import { connect } from "react-redux"; //kompalitet mellom react og redux biblioteket
 import * as actions from "../actions"; //* hent alle action creators vi har lagd
-import Header from "./Header";
+import Header from "./General/Header";
 
-import MovieCard from "./MovieCard";
-import Landing from "./Landing";
-import AboutUs from "./AboutUs";
-import Profil from "./Profil";
+import MovieCard from "./Film/MovieCard";
+import Landing from "./General/Landing";
+import AboutUs from "./General/AboutUs";
+import Profil from "./Bruker/Profil";
 
 class App extends Component {
   //Lagde den om til class så vi får tilgang til livssyklusen 86.Refactor APP
@@ -18,21 +18,7 @@ class App extends Component {
     this.props.fetchUser(); //fetchUser er hentet fra /actions
   }
 
-  
-  renderContent() {
-    switch (this.props.auth) {
-      case null: //ikke avklart om bruker logget inn eller ikke
-        return null;
-      case false: //ikke logget inn
-        return null;
-      default:
-        //logget inn
-        return null;
-    }
-  }
 
-  //Sjekk om bruker er innlogget, gir
-  //route basert på dette
   //render kjører alltid før componentDidMount osv
   render() {
     return (

@@ -24,7 +24,7 @@ const MoviePref = () =>{
             <Typography id={props.id}>
                 <b>{props.title}:</b>
             </Typography>   
-            <Slider 
+            <Slider
                 style={{width:300}}
                 valueLabelDisplay="auto"
                 aria-labelledby="year"

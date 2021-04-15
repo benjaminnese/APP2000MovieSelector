@@ -53,7 +53,8 @@ passport.use(
           googleId: profile.id || "",
           name: profile.displayName || "",
           bilde: profile.photos[0].value || "",
-          epost: profile.emails[0].value || ""
+          epost: profile.emails[0].value || "",
+          hei : "hei fra pasport"
         }).save();
         done(null, user);
       } //profile.id kommer fra google profilen

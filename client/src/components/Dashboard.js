@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Col, Row, Card, Toast, Tab, Tabs } from "react-bootstrap/";
-import Backgrunn from './bg-backgrunn.jpg';
+import Backgrunn from './General/bg-backgrunn.jpg';
 // Det bruker skal se når de kommer inn på nettside når de er allerede logget it
 
 class Dashboard extends Component {

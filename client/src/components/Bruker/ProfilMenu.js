@@ -1,9 +1,9 @@
-import { Tabs, Tab, TabPane, TabContent, Nav, Col, Row } from "react-bootstrap";
+import {  Tab,  Nav, Col, Row } from "react-bootstrap";
 import React from "react";
-import MenuProfilSettings from "./MenuProfilSettings";
+
 import ProfilData from "./ProfilData";
-import Om from './Om';
-import MoviePref from "./MoviePref";
+import Om from '../Om';
+import MoviePref from "../Film/MoviePref";
 import { connect } from "react-redux";
 import "./profil.css";
 // Foreløpig fungerer denne mer som en placheholder for videre utvikling
@@ -39,7 +39,7 @@ const ProfilMenu = (props) => {
               <ProfilData user={props} />
             </Tab.Pane>
             <Tab.Pane eventKey="sprak">Språk</Tab.Pane>
-            <Tab.Pane eventKey="utseende">Darkmode</Tab.Pane>
+            <Tab.Pane eventKey="utseende">Darkmode {props.auth.hei} </Tab.Pane>
             <Tab.Pane eventKey="filmpref">
               <MoviePref/>
             </Tab.Pane>

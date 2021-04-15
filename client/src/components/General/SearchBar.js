@@ -7,7 +7,7 @@ class SearchBar extends React.Component{
         this.setState({term: event.target.value});
     };
     onFormSubmit =(event) =>{
-        event.preventDefault(); //Forhindrer at 
+        event.preventDefault(); //Forhindrer at siden relastest når form blir trykket på
 
         this.props.onFormSubmit(this.state.term); //Fra app.js filen SearchBar
     };
@@ -27,5 +27,5 @@ class SearchBar extends React.Component{
             </div>
         );
     }
-};
+}
 export default SearchBar;

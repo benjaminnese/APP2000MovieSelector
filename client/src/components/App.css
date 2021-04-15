@@ -24,7 +24,7 @@ html, body { /*fikser horizontal scroll, TODO finn årsak*/
   right: 0;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url("bg-backgrunn.jpg");
+  background-image: url("General/bg-backgrunn.jpg");
   opacity: 0.5;
   width: 100%;
   height: 100%;

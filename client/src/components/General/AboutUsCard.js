@@ -8,7 +8,7 @@ import Logo from "./logo.PNG";
 export const AboutUsCard = (props) => {
   return (
     <Card bg="primary" text="white" style={{ width: "20%", height: "30%" }}>
-      <img class="card-img-top" src={Logo} alt="Card image cap" />
+      <img className="card-img-top" src={Logo} alt={props.name}/>
       <Card.Header>{props.name}</Card.Header>
       <Card.Body>
         <Card.Title>{props.studentNummer}</Card.Title>

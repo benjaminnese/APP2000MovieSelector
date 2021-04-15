@@ -1,4 +1,3 @@
-import { Alert } from "bootstrap";
 import { Card } from "react-bootstrap";
 import LikeMovie from "./LikeMovie";
 
@@ -20,7 +19,6 @@ const MoviePoster = ({movie}) => {
     width: "100%",
     borderRadius: "100px",
   };
-  
 
   return (
   
@@ -41,8 +39,7 @@ const MoviePoster = ({movie}) => {
             </Card.Body>
             <LikeMovie
               className="mb-5"
-              onClickLiker={movie.onClickLiker}
-              onClickMisliker={movie.onClickMisliker}
+              filmid = {movie.title}
             />
           </div>
         </Card.ImgOverlay>
