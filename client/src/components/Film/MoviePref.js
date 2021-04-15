@@ -13,7 +13,7 @@ const MoviePref = () =>{
         if(e.target.id==="Year")
             console.log("yes")
     }
-    const fokus = ()=>{
+    const fokus = () =>{
         valgSlider.current.focus();
     }
     //TODO FIKS FOKUS PÅ HVILKEN KNAPP, SAMT GENERALISER DE I RANGEBAR
@@ -32,13 +32,10 @@ const MoviePref = () =>{
                 min={props.min}
                 max={props.max}
                 onChange={handleChange}
-
              />
         </div>
         )
     }
-  
-
     return(
         <div className="p-2 mb-5 bg-white">
         <h1 className="text-center">Film Preferanse</h1>
@@ -65,7 +62,14 @@ const MoviePref = () =>{
             <Form.Check type="checkbox" label="Thriller" />
             <Form.Check type="checkbox" label="Romance" />  
         </Form.Row>
-        <RangeBar title="Year" id="year" min={1985} max={2021} ref={valgSlider} onChange={fokus}/>
+        <RangeBar 
+          title="Year" 
+          id="year" 
+          min={1985} 
+          max={2021} 
+          ref={valgSlider} 
+          onChange={fokus}
+        />
     
         <Typography id="range-year">
             <b>Year:</b> {year[0]}-{year[1]}
