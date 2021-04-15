@@ -4,7 +4,7 @@ class SearchBar extends React.Component{
     state = {term: 'Search'};
 
     onInputChange = (event) =>{
-        this.setState({term: event.target.value});
+        this.setState({term: event.target.value}); //henter verdi fra søkefeltet
     };
     onFormSubmit =(event) =>{
         event.preventDefault(); //Forhindrer at siden relastest når form blir trykket på

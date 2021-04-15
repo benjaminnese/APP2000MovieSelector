@@ -31,7 +31,7 @@ const OmApp = () => {
       <Col className=" col-9  m-4" style={{ height: "70vh" }}>
         <h1 className="text-uppercase m-5">See what's next </h1>
         <Card.Body>
-          <h3 class="text-muted">
+          <h3 className="text-muted">
             Movie Selector er en film applikasjon som har som mål å løse en av
             de største i-lands problemene vi har i dag, nemlig hva vi skal se på
             i kveld. Det er en problemstilling som hjemsøker mange norske hjem

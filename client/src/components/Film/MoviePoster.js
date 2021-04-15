@@ -39,7 +39,8 @@ const MoviePoster = ({movie}) => {
             </Card.Body>
             <LikeMovie
               className="mb-5"
-              filmid = {movie.title}
+              filmid = {movie.id}
+              film ={movie}
             />
           </div>
         </Card.ImgOverlay>
