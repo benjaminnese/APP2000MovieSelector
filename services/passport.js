@@ -44,9 +44,9 @@ passport.use(
           proxy: true, // om ikke proxy:true, så får man http istedenfor https i ruten man bruker. Google godtar ikke dette.
         },
         async (accessToken, refreshToken, profile, done) => {
-          const existingUser = await User.findOne({googleId: profile.id}).populate('pref');
+          const existingUser = await User.findOne({googleId: profile.id});
 
-          if (existingUser) {
+          if (false) {
             // Fix bug som gjør navn ikke kommer opp
             done(null, existingUser); // null = ingen feil her, vi er ferdig her har vi brukeren vi har funnet
           } else {
