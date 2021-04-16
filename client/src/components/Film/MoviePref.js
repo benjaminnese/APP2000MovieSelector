@@ -4,15 +4,15 @@ import Slider from '@material-ui/core/Slider';
 import Typography from '@material-ui/core/Typography';
 import axios from 'axios';
 
-const MoviePref = () =>{
+
+
+const MoviePref = ({user}) =>{
 
     const [year, setYear] = useState([1985,2021]);
     const [rating, setRating] = useState([0,10]);
     const valgSlider = useRef(null);
 
     const [pref, setPref] = useState([])
-
-    const [gendres, setGendres] = useState([]);
     let prefse;
 
     const handleChange = (e, props) => {
@@ -23,39 +23,54 @@ const MoviePref = () =>{
         if(!pref.includes(e.target.value)) {
             setPref([...pref, e.target.value])
         }
-        console.log(pref);
-        prefse = pref.map(prefs=> `{"name": "${prefs}"}, `) //retunere name: action osv
-
-
+        prefse = pref.map(prefs=> `${prefs}`); //retunere name: action osv
+        console.log('fra topp', prefse)
     }
-
 
     const onSubmitPref =(e) =>{
         e.preventDefault();
-        const id = '6078718431f4a60380267753';
-        const preferanse = 	`{
-            "userId": "105917563170383745150",
-            "gendres":[
-                ${prefse}
-                ]
-            }`
-        console.log(axios.get('http://localhost:3000/movie_pref/6078718431f0380267753')
-            .then((res)=>console.log(res.status)))
+            console.log('fra ',prefse)
+            const test = {
+                userId: user.userEmail,
+                gendres: (
+                    pref.map(pre =>{
+                        return(
+                            {name: `${pre}`}
+                        )
+                         
+                    })
+                )    
+            }
+            console.log('til ',test)
+        // console.log(axios.get('http://localhost:3000/movie_pref/6078718431f0380267753')
+        //     .then((res)=>console.log(res.status)))
 
-        axios.post('http://localhost:3000/movie_pref/add', preferanse)
+        axios.post('http://localhost:3000/movie_pref/add', test)
             .then(res => {
+                console.log(test);
+                console.log('fra moviepref.js: ', res)
             });
 
         alert("Lagret");
         //window.location ='/'; //sender bruker tilbake når trykket lagre
-        axios.get('http://localhost:3000/movie_pref')
-            .then(res => {
-                   res.data.map(gendre => {
-                       if(gendre.gendres.length>0)
-                           console.log(gendre.gendres.map(pref => pref.name));
-                   });
-            });
+       
     }
+
+    const hent= (e) =>{
+        e.preventDefault();
+        axios.get(`http://localhost:3000/movie_pref/${user.userEmail}`)
+        .then(res => {
+            document.getElementById("p1").innerHTML = JSON.stringify(res.data);
+        });
+    };
+
+    const hentAlle=() =>{
+        axios.get(`http://localhost:3000/movie_pref`)
+        .then(res => {
+            document.getElementById("p1").innerHTML = JSON.stringify(res.data);
+        });
+         
+    };
 
     const fokus = () =>{
         valgSlider.current.focus();
@@ -102,9 +117,9 @@ const MoviePref = () =>{
             
         </Form.Row>
         <Form.Row className ="m-2">
-            <Form.Check type="checkbox" label="Comedy" />  
-            <Form.Check type="checkbox" label="Thriller" />
-            <Form.Check type="checkbox" label="Romance" />  
+            <Form.Check type="checkbox" label="Comedy" value={"Comedy"}  onChange={(e)=>handleGendres(e)}/>  
+            <Form.Check type="checkbox" label="Thriller" value={"Thriller"}  onChange={(e)=>handleGendres(e)}/>
+            <Form.Check type="checkbox" label="Romance" value={"Romance"}  onChange={(e)=>handleGendres(e)}/>  
         </Form.Row>
         <RangeBar 
           title="Year" 
@@ -142,6 +157,11 @@ const MoviePref = () =>{
        
       </Form>
             <Button onClick={(e) => onSubmitPref(e)}>lagre</Button>
+            <Button onClick={(e) => hent(e)}> hent</Button>
+            <Button onClick={() => hentAlle()}> hent Alle</Button>
+
+
+            <p id="p1"> hei</p>
       </div>
     );
 };

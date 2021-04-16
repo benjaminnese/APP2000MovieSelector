@@ -41,7 +41,7 @@ const ProfilMenu = (props) => {
             <Tab.Pane eventKey="sprak">Språk</Tab.Pane>
             <Tab.Pane eventKey="utseende">Darkmode {props.auth.hei} </Tab.Pane>
             <Tab.Pane eventKey="filmpref">
-              <MoviePref/>
+              <MoviePref user={props}/>
             </Tab.Pane>
             <Tab.Pane eventKey="om">
               <Om/>

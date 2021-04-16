@@ -25,19 +25,19 @@ router.route('/add').post((req, res) => {
 });
 
 router.route('/:id').get((req, res) => {
-  MoviePref.findById(req.params.id)
+  MoviePref.findOne(req.userId) //Så kan vi søke med userId istendenfor ID fra mongoDB
       .then((moviePref) => res.json(moviePref))
       .catch((err) => res.status(400).json('Error: ' + err));
 });
 
 router.route('/:id').delete((req, res) => {
-  MoviePref.findByIdAndDelete(req.params.id)
+  MoviePref. MoviePref.findOneAndDelete(req.userId)
       .then(() => res.json('MoviePref deleted.'))
       .catch((err) => res.status(400).json('Error: ' + err));
 });
 
 router.route('/update/:id').post((req, res) => {
-  MoviePref.findById(req.params.id)
+  MoviePref.findOne(req.userId)
       .then((moviePref) => {
         moviePref.gendres = req.body.gendres;
         moviePref.save()

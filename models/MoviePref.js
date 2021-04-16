@@ -2,11 +2,8 @@ const mongoose = require('mongoose');
 const {Schema} = mongoose;
 
 const moviePrefSchema = new Schema({
-  userId: String,
-  gendres: [{
-    name: String,
-  },
-  ],
+  userId: {type: String, required:true, unique:false},
+  gendres: []
 }, {
   timestamps: true,
 });
