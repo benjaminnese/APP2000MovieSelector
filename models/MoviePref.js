@@ -1,10 +1,12 @@
 const mongoose = require('mongoose');
 const {Schema} = mongoose;
 
+
 const moviePrefSchema = new Schema({
   userId: {type: String, required:true, unique:false},
-  gendres: []
-}, {
+  gendres: [],
+  _user : {type: Schema.Types.ObjectId, ref :'User'} //TODO
+}, {       //_ betyr relasjonsfelt
   timestamps: true,
 });
 
