@@ -11,20 +11,23 @@ const MoviePref = () =>{
     const [key, setKey] = useState ('67eebbe4966f8175133a6a20f9206e7a');
     const [language, setLanguage] = useState('en-US')
     const [sort, setSort] = useState('popularity.desc');
-    const [year, setYear] = useState([1985,2021]);
+    const [year, setYear] = useState([1985,2021]); 
+    // new Date(1995, 11, 17).toISOString().slice(0, 10), new Date(2021, 11, 17).toISOString().slice(0, 10)
     const [rating, setRating] = useState([0,10]);
     const [pref, setPref] = useState([]);
     const [moviePoster, setMoviePoster] = useState([]);
+    //hent id assoisert med kategori https://api.themoviedb.org/3/genre/movie/list?api_key=67eebbe4966f8175133a6a20f9206e7a&language=en-US
 
-    let url = `https://api.themoviedb.org/3/discover/movie?api_key=${key}&language=${language}&sort_by=${sort}&include_adult=false&include_video=false&page=1&primary_release_date.gte=${year[0]}&vote_average.gte=${rating[0]}&vote_average.lte=${rating[1]}`;
+    //TODO sorter liste lokalt istendenfor via url
+    let url = `https://api.themoviedb.org/3/discover/movie?api_key=${key}&language=${language}&sort_by=${sort}&include_adult=false&include_video=false&page=1&release_date.gte=${year[0]}-01-01&release_date.lte=${year[1]}-01-01&vote_count.gte=500&vote_average.gte=${rating[0]}&vote_average.lte=${rating[1]}&with_genres=${pref}`;
     const res = null;
     useEffect (()=>{
-        console.log(url);
+        console.log(url); //hent ut år
         axios.get(url)
         .then(res =>{
-            console.log(res.data.results);
+            console.log(res.data.results.map(movie=>{return (movie.title +  movie.vote_average)}));
             setMoviePoster(res.data.results.map(name=>{return (<MoviePoster movie = {name} ></MoviePoster> )}));
-            
+        
         });
     },[rating]); //aktivere på alle type pref endring?
 
@@ -33,9 +36,10 @@ const MoviePref = () =>{
     const reduxState = useSelector((state) => state.auth); //hente state fra store
                     // useDispatch() for oppdatere
  
-    const onCheckedGenre =(e) =>{
-        if(!pref.includes(e.target.value)) { //hvis preferanse allerede er i state
-            setPref([...pref, e.target.value])
+    const onCheckedGenre =(value) =>{
+        console.log(value);
+        if(!pref.includes(value)) { //hvis preferanse allerede er i state
+            setPref([...pref, value])
         }
       
     }
@@ -93,24 +97,23 @@ const MoviePref = () =>{
         <Form.Row>
         <Col>
             <Form.Label>Sort</Form.Label>
-            <Form.Control as="select" defaultValue="Popularity Desecending">
-                <option>Popularity</option>
-                <option>Rating</option>
-                <option>Release Date</option>
-                <option>Title</option>
+            <Form.Control as="select" defaultValue="Popularity Desecending" onChange={(e)=>setSort(e.target.options[e.target.options.selectedIndex].value)}>
+                <option value="popularity.desc">Popularity</option>
+                <option value="vote_average.desc">Rating</option>
+                <option value="release_date.desc">Release Date</option>
             </Form.Control>
         </Col>
         </Form.Row>
         <Form.Row className ="m-2">
-            <Form.Check type="checkbox" label="Action" value={"Action"}  onChange={(e)=>onCheckedGenre(e)}/>
-            <Form.Check type="checkbox" label="Adventure" value={"Adventure"}  onChange={(e)=>onCheckedGenre(e)}/>
-            <Form.Check type="checkbox" label="Animation" value={"Animation"}  onChange={(e)=>onCheckedGenre(e)}/>
+            <Form.Check type="checkbox" label="Action" value={"28"}  onChange={(e)=>onCheckedGenre(e.target.value)}/>
+            <Form.Check type="checkbox" label="Adventure" value={"12"}  onChange={(e)=>onCheckedGenre(e.target.value)}/>
+            <Form.Check type="checkbox" label="Animation" value={"16"}  onChange={(e)=>onCheckedGenre(e.target.value)}/>
             
         </Form.Row>
         <Form.Row className ="m-2">
-            <Form.Check type="checkbox" label="Comedy" value={"Comedy"}  onChange={(e)=>onCheckedGenre(e)}/>  
-            <Form.Check type="checkbox" label="Thriller" value={"Thriller"}  onChange={(e)=>onCheckedGenre(e)}/>
-            <Form.Check type="checkbox" label="Romance" value={"Romance"}  onChange={(e)=>onCheckedGenre(e)}/>  
+            <Form.Check type="checkbox" label="Comedy" value={"35"}  onChange={(e)=>onCheckedGenre(e.target.value)}/>  
+            <Form.Check type="checkbox" label="Thriller" value={"53"}  onChange={(e)=>onCheckedGenre(e.target.value)}/>
+            <Form.Check type="checkbox" label="Romance" value={"10749"}  onChange={(e)=>onCheckedGenre(e.target.value)}/>  
         </Form.Row>
         {/* <RangeBar 
           title="Year" 
@@ -152,7 +155,7 @@ const MoviePref = () =>{
             <Button onClick={() => hentAlle()}> hent Alle</Button>
 
 
-            <div id="p1">{moviePoster[0]}</div>
+            <div id="p1">{moviePoster[Math.floor(Math.random() * 5)]}</div>
       </div>
     );
 };
