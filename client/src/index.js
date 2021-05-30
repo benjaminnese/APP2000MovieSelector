@@ -7,9 +7,15 @@ import { Provider } from "react-redux";
 import { createStore, applyMiddleware, compose } from "redux"; //Lager den globale "state"
 import reduxThunk from "redux-thunk";
 import reducers from "./reducers";
-import "materialize-css";
 import "bootstrap/dist/css/bootstrap.min.css"; //impotere inn, CSS dekker alle barn
+import 'bootstrap';
+import "materialize-css";
 import "./index.css";
+
+
+
+
+
 
 import axios from "axios";
 window.axios = axios;

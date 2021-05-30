@@ -21,35 +21,34 @@ class Header extends Component {
         );
       default:
         return [
-          <Nav style={{ float: "right" }} className="navbar m-0 p-0 pr-5">
-            <a
-                href="#dropdown-menu" //TODO FIX
-              className="nav-link"
-              id="navbarDropdownMenuLink"
-              role="button"
-              data-toggle="dropdown"
-              aria-expanded="false"
-            >
-              <img
-                src={
-                  this.props.auth
-                    ? this.props.auth.bilde
-                    : "https://cdn.iconscout.com/icon/premium/png-256-thumb/profile-1506810-1278719.png"
-                }
-                style={{ width: "50px", height: "50px" }}
-                className="rounded-circle"
-                alt="logo bilde"
-              />
+          <Nav style={{ float: "right" }} className="navbar m-0 p-0 ">
+          <a
+            className="nav-link dropdown-toggle "
+            href="#"
+            id="navbarDropdownMenuLink"
+            role="button"
+            data-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <img
+              src={
+                this.props.auth
+                  ? this.props.auth.bilde
+                  : "https://cdn.iconscout.com/icon/premium/png-256-thumb/profile-1506810-1278719.png"
+              }
+              style={{ width: "50px", height: "50px" }}
+              className="rounded-circle"
+            />
+          </a>
+          <div className="dropdown-menu">
+            <a className="dropdown-item" href="/profil">
+              Profil
             </a>
-            <div id="dropdown-menu">
-              <a className="dropdown-item" href="/profil">
-                Profil
-              </a>
-              <a  style={{ backgroundColor: "rgba(105, 105, 105,0.2)" }} className="dropdown-item" href="/api/logout">
-                Log Out
-              </a>
-            </div>
-          </Nav>,
+            <a className="dropdown-item" href="/api/logout">
+              Log Out
+            </a>
+          </div>
+        </Nav>
         ];
     }
   }
