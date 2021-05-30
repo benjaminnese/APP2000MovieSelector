@@ -6,7 +6,10 @@ import axios from 'axios';
 import {useSelector, useDispatch} from 'react-redux';
 import MoviePoster from './MoviePoster';
 
-
+/*
+    Forfatter: Benjamin Nese
+    Preferanse for hver bruker over hvilken kategori, år, og rating de vil se filmer fra
+*/
 const MoviePref = () =>{
 
     const [key, setKey] = useState ('67eebbe4966f8175133a6a20f9206e7a');
@@ -21,8 +24,11 @@ const MoviePref = () =>{
 
     const testProps = "Hei fra moviepref";
     //TODO sorter liste lokalt istendenfor via url
+
+    //Concat en link med de forskjellige preferansene endret, her skulle vi ha implementert en bedre løsning
     let url = `https://api.themoviedb.org/3/discover/movie?api_key=${key}&language=${language}&sort_by=${sort}&include_adult=false&include_video=false&page=1&release_date.gte=${year[0]}-01-01&release_date.lte=${year[1]}-01-01&vote_count.gte=500&vote_average.gte=${rating[0]}&vote_average.lte=${rating[1]}&with_genres=${pref}`;
     const res = null;
+
     useEffect (()=>{
         console.log(url); //hent ut år
         axios.get(url)
@@ -30,10 +36,9 @@ const MoviePref = () =>{
             console.log(res.data.results.map(movie=>{return (movie.title +  movie.vote_average)}));
             setMoviePoster(res.data.results.map(name=>{return (<MoviePoster movie = {name} ></MoviePoster> )}));
         });
-    },[rating]); //aktivere på alle type preferanse endring?
+    },[rating]); //hver gang rating endres vil listen oppdateres
 
     
-
     const reduxState = useSelector((state) => state.auth); //hente state fra store
                     // useDispatch() for oppdatere
  
@@ -43,12 +48,11 @@ const MoviePref = () =>{
         if(!pref.includes(value)) { //hvis preferanse allerede er i state
             setPref([...pref, value])
         }
-      
     }
 
     const onSavePref =(e) =>{
         e.preventDefault(); //Vil unngå at nettleser automatisk lastest på nytt
-            const preferanse = {
+            const preferanse = { //Opprett ny variabel som blir et database objekt
                 userId: reduxState.userEmail,
                 genres: (
                     pref.map(pre =>{
@@ -61,6 +65,7 @@ const MoviePref = () =>{
         // console.log(axios.get('http://localhost:3000/movie_pref/6078718431f0380267753')
         //     .then((res)=>console.log(res.status)))
 
+        //Ny preferanse blir lastet opp til databasen via axios
         axios.post('http://localhost:3000/movie_pref/add', preferanse)
             .then(res => {
                 console.log(preferanse);
