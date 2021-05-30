@@ -2,7 +2,6 @@ import {  Tab,  Nav, Col, Row } from "react-bootstrap";
 import React from "react";
 
 import ProfilData from "./ProfilData";
-import Om from '../Om';
 import MoviePref from "../Film/MoviePref";
 import { connect } from "react-redux";
 import "./profil.css";
@@ -46,9 +45,7 @@ const ProfilMenu = (props) => {
             <Tab.Pane eventKey="filmpref">
               <MoviePref user={props}/>
             </Tab.Pane>
-            <Tab.Pane eventKey="om">
-              <Om/>
-            </Tab.Pane>
+           
           </Tab.Content>
         </Col>
       </Tab.Container>
