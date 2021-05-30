@@ -5,15 +5,21 @@ import axios from 'axios';
 import LikeMovie from './LikeMovie';
 import Like from "@material-ui/icons/ThumbUp"; //bruk bootstrap icon?
 import Dislike from "@material-ui/icons/ThumbDown";
+
+/*
+    Forfatter: Benjamin Nese
+*/
+
 //Et film objekt vises på skjermen
 const MovieCard = (props) => {
 
-    const [counter, setCounter] = useState(0);
-    const [selectedMovie, setSelectedMovie] = useState();
+  
     const [likedMovie, setLikedMovie] = useState([]);
     const [moviePoster, setMoviePoster] = useState([]);
+    const [counter, setCounter] = useState(0);
+    const [selectedMovie, setSelectedMovie] = useState();
     
- //TODO FIX her
+ //TODO Så preferanse til bruker blir brukt for film vises og ikke bare en generell lenke
  let url = `https://api.themoviedb.org/3/discover/movie?api_key=67eebbe4966f8175133a6a20f9206e7a`;
     const res = null;
     useEffect (()=>{
@@ -24,7 +30,7 @@ const MovieCard = (props) => {
             setMoviePoster(res.data.results.map(name=>{return (<MoviePoster movie = {name} ></MoviePoster> )}));
         });
         
-    },[]); //aktivere på alle type preferanse endring?
+    },[]); //kjøres ved opprettelse av objektet, samme som didStateMount
 
     useEffect(()=>{
         setSelectedMovie(moviePoster[counter]);
@@ -42,24 +48,22 @@ const MovieCard = (props) => {
                 <div className="m-auto pb-4">
                     {selectedMovie}
                 {/*<LikeMovie onClick={()=>console.log("hello")}/>*/}
-                <div className="m-auto pl-5 w-50">
-                    <button
-                        type="button"
-                        className="btn btn-lg btn-success mr-5"
-                        onClick={() => {setCounter(counter +1); setLikedMovie(prevState=>[...prevState, selectedMovie])}}
-                    >
-                        <Like />
+                    <div className="m-auto pl-5 w-50">
+                        <button
+                            type="button"
+                            className="btn btn-lg btn-success mr-5" //Setter filmen inn i liste med resten av de som er likt
+                            onClick={() => {setCounter(counter +1); setLikedMovie(prevState=>[...prevState, selectedMovie])}}
+                        >
+                            <Like />
                         </button>
-                    
-                    <button
-                        type="button"
-                    className="btn btn-lg btn-danger mr-5 "
-                    onClick={() => {setCounter(counter +1)}}
-                    >
-                        <Dislike />
-                    </button>
-                </div>
-
+                        <button
+                            type="button"
+                            className="btn btn-lg btn-danger mr-5 "
+                            onClick={() => {setCounter(counter +1)}}
+                        >
+                            <Dislike />
+                        </button>
+                    </div>
                 </div>
                 Likte filmer
                 <ul>

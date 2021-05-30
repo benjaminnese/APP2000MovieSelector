@@ -1,7 +1,13 @@
 const router = require('express').Router();
 const MoviePref = require('../models/MoviePref');
+
+/*
+  Forfatter: Benjamin Nese
+*/
+
 //Routing for å opprette, endre, slette filmpreferanse
 
+//Finner frem 
 router.route('/').get((req, res) => {
   MoviePref.find()
       .then((moviePref) => res.json(moviePref))
@@ -18,7 +24,7 @@ router.route('/add').post((req, res) => {
     gendres,
     date,
   });
- // TODO FORTSETT
+ // TODO få userID til å funger som oppkobling mot spesefikke brukeren
   newMoviePref.save()
       .then(() => res.json('Vellykket'))
       .catch((err) => res.status(400).json('Error: ' + err));
@@ -37,7 +43,7 @@ router.route('/:id').delete((req, res) => {
 });
 
 router.route('/update/:id').post((req, res) => {
-  MoviePref.findOne(req.userId)
+  MoviePref.findOne(req.userId) 
       .then((moviePref) => {
         moviePref.gendres = req.body.gendres;
         moviePref.save()
