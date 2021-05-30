@@ -71,7 +71,7 @@ class Header extends Component {
             </Navbar.Brand>
             <Nav className="mr-auto">
               <Nav.Link href="/about">About</Nav.Link>
-              <Nav.Link href="/film">Film</Nav.Link>
+              {this.props.auth ? <Nav.Link href="/film">Film</Nav.Link> :<div/>}
             </Nav>
             <Form inline>
               <h5 className="text-white pr-2">
