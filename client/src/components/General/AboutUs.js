@@ -1,7 +1,12 @@
 import React from "react";
 import AboutUsCard from "./AboutUsCard";
 
-// Hvert AboutUsCard instance er et medlem av gruppen.
+// Hvert AboutUsCard instance er et medlem av gruppen. Hensikten er å vise frem oss som gruppe
+/* 
+
+ @actor Mathias Berger 
+
+*/ 
 
 export const AboutUs = () => {
   return (
