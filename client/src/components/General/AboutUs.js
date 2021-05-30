@@ -27,7 +27,7 @@ export const AboutUs = () => {
         name="Johannes"
         studentNummer="233563"
         desc="FullStack Utvikler for denne nettsiden"
-        imgURL="https://lh3.googleusercontent.com/a-/AOh14GjkusQ7Q3F3Q9d0EHHCOa9CMGK0ddT3O6ooM2BmkCQ=s96-c"
+        imgURL="https://lh3.googleusercontent.com/ogw/ADGmqu8ExUclKCbgKDVJz3m061cnGE2amzzHRFMawmK_=s83-c-mo"
       />
       <AboutUsCard
         name="Håkon"
