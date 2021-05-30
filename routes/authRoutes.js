@@ -1,3 +1,7 @@
+/*
+* Forfatter: Håkon Ruud
+*/
+
 // Tar seg av get requests på forskjellige paths. Deretter kjøres koden spesifisert for den "pathen"
 
 const passport = require("passport"); // henter inn passport

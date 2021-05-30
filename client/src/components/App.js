@@ -11,6 +11,11 @@ import Landing from "./General/Landing";
 import AboutUs from "./General/AboutUs";
 import Profil from "./Bruker/Profil";
 
+/*
+ * Forfatter: Håkon Ruud
+ * Inspirert fra nettkurs, udemy. 
+ */
+
 class App extends Component {
   //Lagde den om til class så vi får tilgang til livssyklusen 86.Refactor APP
   componentDidMount() {
@@ -20,6 +25,9 @@ class App extends Component {
 
 
   //render kjører alltid før componentDidMount osv
+  // Viser frem header, og alle dens komponenter. Bestemmer hvilken path som hører til hvilken path
+  // exact path for at akkurat denne skal brukes, altså at path må være nøyaktig lik. Uten denne, vil path bli brukt så lenge den inneholder
+  // en del av den.
   render() {
     return (
       <div className="container-fluid bg-backgrunnsFarge">
