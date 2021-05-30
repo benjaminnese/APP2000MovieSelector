@@ -44,7 +44,7 @@ const MovieCard = (props) => {
 
     useEffect(()=>{
         setSelectedMovie(moviePoster[counter]);
-        if(counter>8){
+        if(counter>5){
             console.log("reset counter")
             setPage(page+1);
             console.log(url)
