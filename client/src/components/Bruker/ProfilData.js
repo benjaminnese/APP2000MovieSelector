@@ -1,6 +1,8 @@
 import React from "react";
 import { Form, Button, Row } from "react-bootstrap";
-
+/*
+* Forfatter: Johannes Halvorsen
+*/
 export const ProfilData = (props) => {
   return (
     <div>

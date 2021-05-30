@@ -6,6 +6,9 @@ import Om from '../Om';
 import MoviePref from "../Film/MoviePref";
 import { connect } from "react-redux";
 import "./profil.css";
+/*
+* Forfatter: Johannes Halvorsen
+*/
 // Foreløpig fungerer denne mer som en placheholder for videre utvikling
 // Inne i hver table.pane skal det inneholde en slags instilling menu typ.
 
@@ -58,32 +61,5 @@ function mapStateToProps(state) {
 } //Les i App.js hvordan funger
 export default connect(mapStateToProps)(ProfilMenu);
 
-//Orginal kode mathias
 
-  /* <div className="d-flex justify-content-left" style ={{backgroundColor: 'white', width: '50%', height: '50%', opacity: '0.8'}}>
-    <Container>
-      <Tab.Container id="left-tabs-example" defaultActiveKey="first">
-        <Row>
-          <Col sm={3}>
-            <Nav variant="pills" className="flex-column">
-              <Nav.Item>
-                <Nav.Link eventKey="first">Generelt</Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Nav.Link eventKey="second">Tab 2</Nav.Link>
-              </Nav.Item>
-            </Nav>
-          </Col>
-          <Col sm={9}>
-            <Tab.Content>
-              <Tab.Pane eventKey="first">
-                <MenuProfilSettings userName = {userName} userPic = {userPic} />              </Tab.Pane>
-              <Tab.Pane eventKey="second">
-              </Tab.Pane>
-            </Tab.Content>
-          </Col>
-        </Row>
-      </Tab.Container>
-      </Container>
-  </div> */
 

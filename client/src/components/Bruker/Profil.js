@@ -3,9 +3,12 @@ import "../App.css";
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import ProfilContent from "./ProfilContent";
-
+/*
+* Forfatter: Johannes Halvorsen
+*/
 // Profil side, samt sjekker om bruker er logget inn!
 // Hvis ProfilContent hvis bruker er logget inn, hvis ikke skal de bli ført tilbake til landingpage
+
 
 class Profil extends Component {
   renderContent() {

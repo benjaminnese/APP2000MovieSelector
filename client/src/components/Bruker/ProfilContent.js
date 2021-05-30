@@ -3,7 +3,9 @@ import React, { Component } from "react";
 import OmApp from "./../General/OmApp";
 import ProfilMenu from "./ProfilMenu";
 import { connect } from "react-redux";
-
+/*
+* Forfatter: Johannes Halvorsen
+*/
 // Skal vise diverse instillinger
 
 class ProfilContent extends Component {
