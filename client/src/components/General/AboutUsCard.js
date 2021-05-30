@@ -4,6 +4,11 @@ import { Card } from "react-bootstrap";
 import Logo from "./logo.PNG";
 // Lager et kort for å vise frem hver student
 // Skal ta en navn(Mathias Berger) feks, og tekst om personen. Samt et bilde.
+/* 
+
+ @actor Mathias Berger 
+
+*/ 
 
 export const AboutUsCard = (props) => {
   return (

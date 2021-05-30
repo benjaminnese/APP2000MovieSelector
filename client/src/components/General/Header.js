@@ -3,7 +3,11 @@ import { connect } from "react-redux";
 import { Button, Navbar, Nav, Form} from "react-bootstrap";
 import Logo from "./logo.PNG";
 
+/* 
 
+ @actor Mathias Berger 
+
+*/ 
 class Header extends Component {
   renderContent() {
     switch (this.props.auth) {

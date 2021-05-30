@@ -2,6 +2,11 @@ import React from "react";
 import { Col, Row, Card } from "react-bootstrap";
 
 // Om oss, component i Landing.js, skal fortelle litt om oss, skal deretter følge en knapp for registrering med google
+/* 
+
+ @actor Mathias Berger og Benjamin Nese
+
+*/ 
 
 const OmApp = () => {
   return (

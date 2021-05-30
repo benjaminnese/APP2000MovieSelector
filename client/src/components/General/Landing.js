@@ -5,6 +5,11 @@ import { connect } from "react-redux";
 import "../App.css";
 import React, { Component } from "react";
 // Se lucid chart for skjetch for landigpage
+/* 
+
+ @actor Mathias Berger 
+
+*/ 
 
 class Landing extends Component {
   renderContent() {
