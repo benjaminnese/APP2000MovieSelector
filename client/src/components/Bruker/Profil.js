@@ -5,6 +5,7 @@ import { Redirect } from "react-router-dom";
 import ProfilContent from "./ProfilContent";
 /*
 * Forfatter: Johannes Halvorsen
+* Inspirert av Udemy kurs
 */
 // Profil side, samt sjekker om bruker er logget inn!
 // Hvis ProfilContent hvis bruker er logget inn, hvis ikke skal de bli ført tilbake til landingpage

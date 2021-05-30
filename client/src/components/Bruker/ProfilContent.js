@@ -5,6 +5,7 @@ import ProfilMenu from "./ProfilMenu";
 import { connect } from "react-redux";
 /*
 * Forfatter: Johannes Halvorsen
+* Inspirert av Udemy kurs
 */
 // Skal vise diverse instillinger
 
