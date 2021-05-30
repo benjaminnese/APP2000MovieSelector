@@ -1,5 +1,10 @@
 import { Card } from "react-bootstrap";
 
+/*
+ *  Forfatter: Håkon Ruud
+ */
+
+
 //Struktur og informasjon om bilde poster
 
 const MoviePoster = ({movie}) => {
@@ -19,6 +24,7 @@ const MoviePoster = ({movie}) => {
     borderRadius: "100px",
   };
 
+  // Film kort. Basert på bootstrap sin Card komponent
   return (
     <div style={{ width: "700px", display: "flex" }}>
       <Card text="dark" style={{ width: "100%", borderRadius: "95px" }}>
