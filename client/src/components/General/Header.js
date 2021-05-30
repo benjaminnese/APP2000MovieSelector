@@ -16,7 +16,7 @@ class Header extends Component {
       case false:
         return (
           <Button variant="primary" a href="/auth/google">
-            Login with google
+            Login with Google
           </Button>
         );
       default:
