@@ -1,4 +1,6 @@
-/* Håndterer verifisering av brukere ved innlogging ved hjelp av passport.
+/* 
+ * @actor Benjamin Nese
+ * Håndterer verifisering av brukere ved innlogging ved hjelp av passport.
  * Her autentifiseres bruker via google, så derfor brukes GoogleStrategy.
  * En strategy i passport forteller passport hvordan den skal håndtere autentifisering.
  *
