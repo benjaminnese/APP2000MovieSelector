@@ -1,3 +1,6 @@
+/*
+* @actor Benjamin Nese
+*/
 // pw heroku :dgb@123456
 const express = require('express'); // henter inn express
 const mongoose = require('mongoose'); // henter inn mongoose

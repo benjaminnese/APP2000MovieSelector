@@ -1,3 +1,7 @@
+/*
+* @actor Johannes Halvorsen 
+*/
+
 const mongoose = require('mongoose');
 const {Schema} = mongoose;
 
