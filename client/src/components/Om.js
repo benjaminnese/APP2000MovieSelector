@@ -1,3 +1,6 @@
+/*
+* Forfatter: Håkon Ruud
+*/
 export default  () =>{
     return(
     <div>
