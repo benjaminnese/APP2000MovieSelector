@@ -3,7 +3,6 @@ import React from 'react';
 /*
 * Forfatter: Håkon Ruud
 */
-// 
 
 const MovieItem = ({movie, onMovieSelect}) =>{
     return (

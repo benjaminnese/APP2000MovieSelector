@@ -33,7 +33,7 @@ export const AboutUs = () => {
         name="Håkon"
         studentNummer="233546"
         desc="FullStack Utvikler for denne nettsiden"
-        imgURL="https://lh3.googleusercontent.com/a-/AOh14GjkusQ7Q3F3Q9d0EHHCOa9CMGK0ddT3O6ooM2BmkCQ=s96-c"
+        imgURL="https://scontent-arn2-1.xx.fbcdn.net/v/t1.6435-9/47575869_1159498214213577_7608913015907287040_n.jpg?_nc_cat=107&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=eINdlVNvylMAX8ol9Ao&_nc_ht=scontent-arn2-1.xx&oh=ff41592febdf52ac36da99e306e6d8a0&oe=60D848D0"
       />
     </div>
   );

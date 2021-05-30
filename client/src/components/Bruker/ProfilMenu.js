@@ -54,7 +54,7 @@ const ProfilMenu = (props) => {
 };
 function mapStateToProps(state) {
   return { auth: state.auth }; //Henter auth fra reducers
-  //skjer noe magi, retunere til connect under
+  //retunere til connect under
 } //Les i App.js hvordan funger
 export default connect(mapStateToProps)(ProfilMenu);
 
