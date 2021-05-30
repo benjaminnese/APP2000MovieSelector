@@ -1,8 +1,8 @@
 import axios from "axios";
 import { FETCH_USER, LIKE_MOVIE, DISLIKE_MOVIE } from "./types";
+//Bare en måte å gjøre det på, "boiler plate", som er tilpasset vårt bruk
 
 //Action er en beskrivelse som kan bli utført
-
 //Enkel funksjon som retunere et object
 //Type betyr navn på action
 export const fetchUser = () => async (dispatch) => {
