@@ -13,11 +13,11 @@ console.log(moviePrefSchema);
 
 const userSchema = new Schema({
   googleId: {type: String, require: true},
-  name: String, // lage vennerelasjon her, en array med users inni users
+  name: String, 
   bilde: String,
   epost: String,
   hei: String,
-  pref: {type: Schema.Types.ObjectId, ref: 'moviePrefSchema'}, //TODO
+  pref: {type: Schema.Types.ObjectId, ref: 'moviePrefSchema'}, //TODO koble sammen mot filmpreferanse
 });
 
 const users = mongoose.model('users', userSchema);

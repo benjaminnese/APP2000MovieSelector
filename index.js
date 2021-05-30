@@ -9,7 +9,7 @@ require('./models/User'); // henter inn User Schema fra User filen i models
 const movieRoutes = require('./routes/movieRoutes');
 require('./services/passport'); // rekkefølgen her er viktig, ettersom de laster inn nødvendig data
 
-mongoose.Promise = global.Promise; // old
+mongoose.Promise = global.Promise; 
 mongoose.connect(keys.mongoURI); // kobler til MongoDb ved hjelp av moongoose. Bruker tilkoblings-string fra keys filen.
 
 const app = express(); // kaller express, og oppretter en express applikasjon.
@@ -44,7 +44,6 @@ if (process.env.NODE_ENV === 'production') {
     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
   });
 }
-
 
 
 // Port fra heroku eller 5000 om lokalt

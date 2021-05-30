@@ -10,7 +10,7 @@ const LikeMovie = (props) => {
 
   return (
     <div className="d-flex justify-content-center">
-        <h1>test{film}</h1>
+        <h1>{film}</h1>
       <button
         type="button"
         className="btn btn-lg btn-success mr-5"

@@ -1,6 +1,6 @@
-// eslint-disable-next-line new-cap
 const router = require('express').Router();
 const MoviePref = require('../models/MoviePref');
+//Routing for å opprette, endre, slette filmpreferanse
 
 router.route('/').get((req, res) => {
   MoviePref.find()

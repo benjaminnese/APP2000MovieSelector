@@ -1,7 +1,7 @@
 import axios from "axios";
 import { FETCH_USER, LIKE_MOVIE, DISLIKE_MOVIE } from "./types";
 
-//Action er en beskrivelse av som kan bli utført
+//Action er en beskrivelse som kan bli utført
 
 //Enkel funksjon som retunere et object
 //Type betyr navn på action

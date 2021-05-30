@@ -15,14 +15,13 @@ const MoviePoster = ({movie}) => {
     backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.9)), 
     url(${baseImgUrl}/${size}${movie.poster_path})`,
     backgroundSize: "cover",
-    height: "90vh",
+    height: "85vh",
     width: "100%",
     borderRadius: "100px",
   };
 
   return (
-  
-    <div style={{ width: "800px", display: "flex" }}>
+    <div style={{ width: "700px", display: "flex" }}>
       <Card text="dark" style={{ width: "100%", borderRadius: "95px" }}>
         <Card.Img variant="top" style={backgroundStyle} />
         <Card.ImgOverlay className="d-flex flex-column ">
@@ -33,15 +32,11 @@ const MoviePoster = ({movie}) => {
               <Card.Title>
                 <h1>{movie.title}</h1>
               </Card.Title>
-              <Card.Text className="pl-5" variant="primary">
-                <h2>{movie.overview}</h2>
+              <Card.Text className="pl-1" variant="primary">
+                <h4>{movie.overview}</h4>
               </Card.Text>
             </Card.Body>
-            <LikeMovie
-              className="mb-5"
-              filmid = {movie.id}
-              film ={movie}
-            />
+           
           </div>
         </Card.ImgOverlay>
       </Card>

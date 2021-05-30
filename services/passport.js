@@ -45,7 +45,6 @@ passport.use(
         },
         async (accessToken, refreshToken, profile, done) => {
           const existingUser = await User.findOne({googleId: profile.id});
-
           if (false) {
             // Fix bug som gjør navn ikke kommer opp
             done(null, existingUser); // null = ingen feil her, vi er ferdig her har vi brukeren vi har funnet
@@ -56,8 +55,6 @@ passport.use(
               name: profile.displayName || '',
               bilde: profile.photos[0].value || '',
               epost: profile.emails[0].value || '',
-              hei: 'hei fra pasport',
-                pref: null,
             }).save();
             done(null, user);
           } // profile.id kommer fra google profilen
