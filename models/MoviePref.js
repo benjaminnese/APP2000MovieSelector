@@ -1,5 +1,5 @@
 /*
-* @actor Johannes Halvorsen 
+* Forfatter: Johannes Halvorsen 
 */
 
 const mongoose = require('mongoose');

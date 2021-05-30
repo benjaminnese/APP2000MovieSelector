@@ -1,5 +1,5 @@
 /*
- @actor Benjamin Nese
+ Forfatter: Benjamin Nese
 */
 
 /* Henter inn mongoose, og Schema fra mongoose.
