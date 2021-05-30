@@ -1,8 +1,12 @@
 import React from 'react';
 import MovieItem from './MovieItem';
 
+/*
+* Forfatter: Håkon Ruud
+*/
+
 const MovieList = ({movies, onMovieSelect}) =>{ //henter ut props.movies
-   
+   // Laster inn liste
    const renderList = movies.map((movie)=>{
         return (
             <ul className="list-group">
