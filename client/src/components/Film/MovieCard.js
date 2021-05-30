@@ -17,19 +17,24 @@ const MovieCard = (props) => {
     const [likedMovie, setLikedMovie] = useState([]);
     const [moviePoster, setMoviePoster] = useState([]);
     const [counter, setCounter] = useState(0);
+    const [page, setPage] = useState(0);
     const [selectedMovie, setSelectedMovie] = useState();
     
  //TODO Så preferanse til bruker blir brukt for film vises og ikke bare en generell lenke
  let url = `https://api.themoviedb.org/3/discover/movie?api_key=67eebbe4966f8175133a6a20f9206e7a`;
     const res = null;
+
+   const getMovies = ()=>{
+    console.log(url || props.url); //hent ut år
+    axios.get(url || props.url)
+    .then(res =>{
+        console.log(res.data.results.map(movie=>{return (movie.title +  movie.vote_average)}));
+        setMoviePoster(res.data.results.map(name=>{return (<MoviePoster movie = {name} ></MoviePoster> )}));
+    });
+   }
+   
     useEffect (()=>{
-        console.log(url || props.url); //hent ut år
-        axios.get(url || props.url)
-        .then(res =>{
-            console.log(res.data.results.map(movie=>{return (movie.title +  movie.vote_average)}));
-            setMoviePoster(res.data.results.map(name=>{return (<MoviePoster movie = {name} ></MoviePoster> )}));
-        });
-        
+       getMovies();
     },[]); //kjøres ved opprettelse av objektet, samme som didStateMount
 
     useEffect(()=>{
@@ -39,7 +44,15 @@ const MovieCard = (props) => {
 
     useEffect(()=>{
         setSelectedMovie(moviePoster[counter]);
-        console.log("liked");
+        if(counter>8){
+            console.log("reset counter")
+            setPage(page+1);
+            console.log(url)
+            url += `&page=${page}`;
+            console.log(url)
+            getMovies();
+            setCounter(0);
+        }
     },[counter]);
     
     return (
