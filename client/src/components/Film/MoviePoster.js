@@ -1,5 +1,4 @@
 import { Card } from "react-bootstrap";
-import LikeMovie from "./LikeMovie";
 
 //Struktur og informasjon om bilde poster
 

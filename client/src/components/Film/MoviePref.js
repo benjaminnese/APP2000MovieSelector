@@ -5,7 +5,8 @@ import Typography from '@material-ui/core/Typography';
 import axios from 'axios';
 import {useSelector, useDispatch} from 'react-redux';
 import MoviePoster from './MoviePoster';
-import MovieCard from './MovieCard';
+
+
 const MoviePref = () =>{
 
     const [key, setKey] = useState ('67eebbe4966f8175133a6a20f9206e7a');
