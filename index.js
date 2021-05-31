@@ -8,6 +8,7 @@ const cookieSession = require('cookie-session'); // Hjelpe-bibliotek for cookie 
 const passport = require('passport'); // henter inn passport
 const bodyParser = require('body-parser'); // henter inn bodyParser
 const keys = require('./config/keys'); // henter inn nøkler fra keys filen
+const cors = require('cors')
 require('./models/User'); // henter inn User Schema fra User filen i models
 const movieRoutes = require('./routes/movieRoutes');
 require('./services/passport'); // rekkefølgen her er viktig, ettersom de laster inn nødvendig data
