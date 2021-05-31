@@ -39,7 +39,7 @@ npm run dev
 Root prosjekt mappe
 ├── Client                 # Frontend, React delen
    ├── public              # Root html, statisk filer(bilder, css) 
-   ├── src                 # Her ligger meste av vår kode
+   ├── src❤️               # Her ligger meste av vår kode
        ├                   # Actions, Reducers er Redux konsepter  ### [Redux](https://redux.js.org/)
        ├─actions           # Actions kan sees på som events som beskriver noe  
        ├                   # som vil skje i applikasjonen
@@ -58,12 +58,12 @@ Root prosjekt mappe
    ├── package.json        #
    └── README.md           #
    
-├── Config                 # Verdifiserings url'er og nøkler for utvikling og heroku
-├── Middlewares            # Operasjoner som skjer på tidspunktet mellom spørring og henting. 
-├── Models                 # Modeler for databasen, strukturert med Mongoose
+├── Config❤️               # Verdifiserings url'er og nøkler for utvikling og heroku
+├── Middlewares❤️          # Operasjoner som skjer på tidspunktet mellom spørring og henting. 
+├── Models ❤️              # Modeler for databasen, strukturert med Mongoose
 ├── Public                
-├── Routes                 # Ruting ved authenfisering via Passport
-├── Services               # Konfigurering av Passport mot google autenfisering    
+├── Routes❤️               # Ruting ved authenfisering via Passport
+├── Services❤️             # Konfigurering av Passport mot google autenfisering    
 ├
 ├── .gitignore             # Filer som ikke skal lastet opp til GitHub, pga plass eller nøkler
 ├── package-lock.json      # Låste moduler, så applikasjon skal kjøre likes mulig på tvers av datamaskiner
