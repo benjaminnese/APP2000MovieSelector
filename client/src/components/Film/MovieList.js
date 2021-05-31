@@ -1,25 +1,22 @@
-import React from 'react';
-import MovieItem from './MovieItem';
+import React from "react";
+import MovieItem from "./MovieItem";
 
 /*
-* Forfatter: Håkon Ruud
-*/
+ * Forfatter: Håkon Ruud
+ */
 
-const MovieList = ({movies, onMovieSelect}) =>{ //henter ut props.movies
-   // Laster inn liste
-   const renderList = movies.map((movie)=>{
-        return (
-            <ul className="list-group">
-                <MovieItem
-                key = {movie.id} 
-                movie={movie}
-                onMovieSelect ={onMovieSelect}/>
-            </ul>
-           
-        );
-    });
+const MovieList = ({ movies, onMovieSelect }) => {
+  //henter ut props.movies
+  // Laster inn liste
+  const renderList = movies.map((movie) => {
+    return (
+      <ul className="list-group">
+        <MovieItem key={movie.id} movie={movie} onMovieSelect={onMovieSelect} />
+      </ul>
+    );
+  });
 
-    return <div>{renderList}</div>
+  return <div>{renderList}</div>;
 };
 
 export default MovieList;

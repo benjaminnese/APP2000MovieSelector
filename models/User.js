@@ -19,8 +19,9 @@ const userSchema = new Schema({
   name: String, 
   bilde: String,
   epost: String,
-  hei: String,
   pref: {type: Schema.Types.ObjectId, ref: 'moviePrefSchema'}, //TODO koble sammen mot filmpreferanse
+},{
+  timestamps: true,
 });
 
 const users = mongoose.model('users', userSchema);

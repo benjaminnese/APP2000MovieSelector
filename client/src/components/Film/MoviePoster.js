@@ -4,12 +4,11 @@ import { Card } from "react-bootstrap";
  *  Forfatter: Håkon Ruud
  */
 
-
 //Struktur og informasjon om bilde poster
 
-const MoviePoster = ({movie}) => {
-  if(!movie){
-    return <div className="text-white">loading</div>
+const MoviePoster = ({ movie }) => {
+  if (!movie) {
+    return <div className="text-white">loading</div>;
   }
   //Vi får bare siste del av bilde url, ettersom første del er static
   //lagrer vi den i variabelen baseImgUrl og size
@@ -41,7 +40,6 @@ const MoviePoster = ({movie}) => {
                 <h4>{movie.overview}</h4>
               </Card.Text>
             </Card.Body>
-           
           </div>
         </Card.ImgOverlay>
       </Card>
