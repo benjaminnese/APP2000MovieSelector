@@ -16,7 +16,7 @@ mongoose.Promise = global.Promise;
 mongoose.connect(keys.mongoURI); // kobler til MongoDb ved hjelp av moongoose. Bruker tilkoblings-string fra keys filen.
 
 const app = express(); // kaller express, og oppretter en express applikasjon.
-
+app.use(cors());
 // Gjør data tilgjengelig for req.body
 // For hver gang det kommer en post/put div request, vil den bli kjørt gjennom JSON
 // konventeringen for å få riktig text format
